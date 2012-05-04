@@ -58,9 +58,15 @@ footer a:visited {
 #title {
     color: white;
     font-size: 18px;
-    line-height: 35px;
     display: inline-block;
     margin: 0;
+    line-height: 34px;
+}
+#calltoaction {
+    float: right;
+    margin: 0 2em;
+    line-height: 34px;
+    color: white;
 }
 #download {
     float: right;
