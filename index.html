@@ -48,11 +48,26 @@
     </div>
     <div class="sevencol last">
         <form id="my-form">
-            <p><label>Username:</label><input name="username" type="text"/></p>
-            <p><label>Password:</label><input name="pass" type="password"/></p>
-            <p><label>E-Mail:</label><input name="email" type="text"/></p>
-            <p><label>Date:</label><input name="date" type="text" placeholder="mm/dd/yy"/></p>
-            <p>
+            <div><label>Username:</label><input name="username" type="text"/></div>
+            <div><label>Password:</label><input name="pass" type="password"/></div>
+            <div><label>E-Mail:</label><input name="email" type="text"/></div>
+            <div><label>Date:</label><input name="date" type="text" placeholder="mm/dd/yy"/></div>
+      
+            <div></div>
+            <div>
+                <label>&nbsp;</label>
+                <select>
+                    <option>One</option>
+                    <option>Two</option>
+                    <option>Three</option>
+                    <option>Four</option>
+                    <option>Five</option>
+                    <option>Six</option>
+                    <option>Seven</option>
+                    <option>Eigth</option>
+                </select>
+            </div>
+            <div>
                 <label>Languages:</label>
                 <label><input type="checkbox" name="langs[]" value="English"/>English</label>
                 <label><input type="checkbox" name="langs[]" value="Chinese"/>Chinese</label>
@@ -60,13 +75,13 @@
                 <label><input type="checkbox" name="langs[]" value="French"/>French</label>
                 <label><input type="checkbox" name="langs[]" value="German"/>German</label>
                 <label><input type="checkbox" name="langs[]" value="Korean"/>Korean</label>
-            </p>
-            <p><label>Radios:</label>
+            </div>
+            <div><label>Radios:</label>
                 <label><input type="radio" name="radio"/>One</label>
                 <label><input type="radio" name="radio"/>Two</label>
                 <label><input type="radio" name="radio"/>Three</label>
-            </p>
-            <p><label>State:</label>
+            </div>
+            <div><label>State:</label>
             <select name="states">
                 <option value="Select a State">Select a State</option> 
                 <option value="AL">Alabama</option> 
@@ -120,9 +135,9 @@
                 <option value="WV">West Virginia</option> 
                 <option value="WI">Wisconsin</option> 
                 <option value="WY">Wyoming</option>
-            </select></p>
-            <p><label>Comments:</label><textarea id="comments" name="comments"></textarea></p>
-            <p><label>&nbsp;</label><button type="submit">Submit</button><button type="button">Button</button></p>
+            </select></div>
+            <div><label>Comments:</label><textarea id="comments" name="comments"></textarea></div>
+            <div><label>&nbsp;</label><button type="submit">Submit</button><button type="button">Button</button></div>
             <div style="clear: both;"></div>
         </form>
     </div>
