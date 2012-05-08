@@ -277,10 +277,10 @@
         .error {
             @total: (@input-width + @icon-size + (@icon-padding * 2));
             @icon: @icon-size + (@icon-padding * 2);
-            @percent:  (@icon / @total) * 100;
-            width: 100% - @percent
+            @percent: (@icon / @total) * 100;
+            width: 100% - @percent;
         }
-        p,
+        div,
         input[type="text"],
         input[type="password"],
         textarea,
