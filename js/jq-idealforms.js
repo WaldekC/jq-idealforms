@@ -426,7 +426,8 @@
             filters: {
                 // Add your own filters
                 // ie. myfilter: { regex: /something/, error: 'My error' }
-            }
+            },
+            responsive: true
         }, ops);
 
         // Merge custom and default filters
@@ -706,11 +707,10 @@
             }
         });
 
-        $(window).resize(function() {
+        if (o.responsive) {
+            $(window).resize(actions.responsive);
             actions.responsive();
-        });
-
-        actions.responsive();
+        }
 
         return this;
 
