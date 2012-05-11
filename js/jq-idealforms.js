@@ -460,7 +460,7 @@
                     $labels = $form.find('label:first-child'),
                     $text = $inputs.filter(':text, :password, textarea'),
                     $select = $inputs.filter('select'),
-                    $radiocheck = $inputs.filter(':checkbox, :radio');
+                    $radiocheck = $inputs.filter(':checkbox, :radio')
                 return {
                     inputs: $inputs,
                     labels: $labels,
