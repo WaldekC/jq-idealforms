@@ -5,12 +5,12 @@
 <meta charset="utf-8"/>
 <title>jq-idealforms</title>
 <!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
+<script src="js/lib/html5shiv.js"></script>
 <![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-<link href="css/normalize.css" rel="stylesheet"/>
+<!-- <link href="css/normalize.css" rel="stylesheet"/> -->
 <link href="css/1140.css" rel="stylesheet"/>
-<link href="css/jquery-idealforms.css" rel="stylesheet" media="screen"/>
+<link href="css/jquery.idealforms.css" rel="stylesheet" media="screen"/>
 <link href="css/styles.css" rel="stylesheet" media="screen"/>
 </head>
 <body>
@@ -52,6 +52,7 @@
       <div><label>Password:</label><input name="pass" type="password"/></div>
       <div><label>E-Mail:</label><input name="email" type="text"/></div>
       <div><label>Date:</label><input name="date" type="text" placeholder="mm/dd/yy"/></div>
+      <div><label>Price:</label><input name="price" type="text"/></div>
       <div>
         <label>Languages:</label>
         <label><input type="checkbox" name="langs[]" value="English"/>English</label>
@@ -141,7 +142,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="js/jquery-idealforms.js"></script>
+<script src="js/min/jquery.idealforms.min.js"></script>
 <script>
 
   var $form = $('#my-form');
