@@ -4,10 +4,6 @@
 
 ------------------------------------------------------- */
 
-  @font-family: inherit;
-  @select-item-height: floor(@font-size * 1.7);
-  @select-max-height: @select-item-height * @select-scroll-size; /* `auto` for no scrollbar */
-
   .gradient(@startColor, @endColor) {
     background-color: @startColor;
     background-repeat: no-repeat;
@@ -23,12 +19,13 @@
     -webkit-box-shadow: @shadow1, @shadow2;
     box-shadow: @shadow1, @shadow2;
   }
-  /* IE8 hack :after pseudo force refresh */
-  .ie-refresh {
-    content: ".";
-    line-height: 0;
-    text-indent: -9999px;
+  .transition(@string: all .30s ease-in-out) when (@css3-anim) {
+    -webkit-transition: @string;
+    -moz-transition: @string;
+    -ms-transition: @string;
+    -o-transition: @string;
   }
+  .transition() when not (@css3-anim) {}
   .no-user-select {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -36,10 +33,17 @@
     -ms-user-select: none;
     user-select: none;
   }
-
+  /* IE8 hack :after pseudo force refresh */
+  .ie-refresh {
+    content: ".";
+    line-height: 0;
+    text-indent: -9999px;
+  }
+  
 /*--------------------------------------------------------
   UI Inputs (select & button)
 ------------------------------------------------------- */
+
   .ui-input {
     font-family: @font-family;
     @size: floor(@font-size * 2.2);
