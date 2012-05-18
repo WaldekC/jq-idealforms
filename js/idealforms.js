@@ -16,7 +16,8 @@ $.fn.idealforms = function (ops) {
       alert('The form does not validate! Check again...')
     },
     responsiveAt: 'auto',
-    customInputs: true
+    customInputs: true,
+    speed: 0
   }, ops),
 
   $form = this, // The form
@@ -109,7 +110,7 @@ $.fn.idealforms = function (ops) {
         // Insert icons and error in DOM
         $form.find('.ideal-field')
           .append($valid.add($invalid))
-          .after($error)
+          .after($error.hide())
 
       }())
 
@@ -202,6 +203,7 @@ $.fn.idealforms = function (ops) {
       var 
       
       $input = FormInputs.inputs.filter('[name="' + input.attr('name') + '"]'),
+      isRadiocheck = input.is(':checkbox, :radio'),
       userOptions = o.inputs[input.attr('name')] || '',
       value = (function () {
         var iVal = input.val()
@@ -210,7 +212,7 @@ $.fn.idealforms = function (ops) {
         }
         // Always send a value when validating
         // :checkboxes and :radio
-        if (input.is(':checkbox, :radio')) {
+        if (isRadiocheck) {
           return userOptions && ' '
         }
         return iVal
@@ -228,13 +230,13 @@ $.fn.idealforms = function (ops) {
       $field = input.parents('.ideal-field'),
       $error = $field.next('.error'),
       $invalid = (function () {
-        if ($input.is(':checkbox, :radio')) {
+        if (isRadiocheck) {
           return input.parent().siblings('.invalid-icon')
         }
         return input.siblings('.invalid-icon')
       }()),
       $valid = (function () {
-        if ($input.is(':checkbox, :radio')) {
+        if (isRadiocheck) {
           return input.parent().siblings('.valid-icon')
         }
         return input.siblings('.valid-icon')
@@ -242,7 +244,8 @@ $.fn.idealforms = function (ops) {
 
       // Reset
       $field.removeClass('valid invalid')
-      $error.add($invalid).add($valid).hide()
+      $invalid.add($valid).hide()
+      if (evt === 'blur') $error.stop(1, 1).fadeOut(o.speed)
 
       // Validates
       if (value && test.isValid) {
@@ -255,7 +258,9 @@ $.fn.idealforms = function (ops) {
         $invalid.show()
         $field.addClass('invalid')
         // hide error on blur
-        if (evt !== 'blur') $error.html(test.error).show()
+        if (evt !== 'blur') {
+          $error.html(test.error).stop(1, 1).fadeIn(o.speed)
+        }
       }
     },
 
