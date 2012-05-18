@@ -16,8 +16,7 @@ $.fn.idealforms = function (ops) {
       alert('The form does not validate! Check again...')
     },
     responsiveAt: 'auto',
-    customInputs: true,
-    speed: 0
+    customInputs: true
   }, ops),
 
   $form = this, // The form
@@ -244,8 +243,7 @@ $.fn.idealforms = function (ops) {
 
       // Reset
       $field.removeClass('valid invalid')
-      $invalid.add($valid).hide()
-      if (evt === 'blur') $error.stop(1, 1).fadeOut(o.speed)
+      $error.add($invalid).add($valid).hide()
 
       // Validates
       if (value && test.isValid) {
@@ -258,9 +256,7 @@ $.fn.idealforms = function (ops) {
         $invalid.show()
         $field.addClass('invalid')
         // hide error on blur
-        if (evt !== 'blur') {
-          $error.html(test.error).stop(1, 1).fadeIn(o.speed)
-        }
+        if (evt !== 'blur') $error.html(test.error).show()
       }
     },
 
