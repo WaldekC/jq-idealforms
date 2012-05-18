@@ -3,8 +3,10 @@
  */
 $.fn.idealforms = function (ops) {
 
+  var
+  
   // Default options
-  var o = $.extend({
+  o = $.extend({
     inputs: {},
     filters: {},
     onSuccess: function (e) {
@@ -15,36 +17,32 @@ $.fn.idealforms = function (ops) {
     },
     responsiveAt: 'auto',
     customInputs: true
-  }, ops)
+  }, ops),
 
-  // Merge custom and default filters
-  $.extend(true, Filters, o.filters)
-
-/*--------------------------------------------------------------------------*/
-
-  var $form = this,
-      /**
-       * @namespace All form inputs of the given form
-       * @memberOf $.fn.idealforms
-       * @returns {object}
-       */
-      FormInputs = {
-        inputs: $form.find('input, select, textarea, :button'),
-        labels: $form.find('label:first-child'),
-        text: $form.find('input:text, input:password, textarea'),
-        select: $form.find('select'),
-        radiocheck: $form.find('input:radio, input:checkbox'),
-        buttons: $form.find(':button')
-      }
+  $form = this, // The form
+  
+  /**
+   * @namespace All form inputs of the given form
+   * @memberOf $.fn.idealforms
+   * @returns {object}
+   */
+  FormInputs = {
+    inputs: $form.find('input, select, textarea, :button'),
+    labels: $form.find('label:first-child'),
+    text: $form.find('input:text, input:password, textarea'),
+    select: $form.find('select'),
+    radiocheck: $form.find('input:radio, input:checkbox'),
+    buttons: $form.find(':button')
+  },
 
 /*--------------------------------------------------------------------------*/
 
   /**
   * @namespace Contains LESS data
   */
-  var LessVars = {
+  LessVars = {
     fieldWidth: Utils.getLessVar('ideal-field-width', 'width')
-  }
+  },
 
 /*--------------------------------------------------------------------------*/
 
@@ -52,7 +50,7 @@ $.fn.idealforms = function (ops) {
    * @namespace Methods of the form
    * @memberOf $.fn.idealforms
    */
-  var Actions = {
+  Actions = {
 
     /** Create validation elements and neccesary markup
      * @private
@@ -201,44 +199,46 @@ $.fn.idealforms = function (ops) {
      */
     analyze: function (input, evt) {
 
-      var $input = FormInputs.inputs.filter('[name="' + input.attr('name') + '"]'),
-          userOptions = o.inputs[input.attr('name')] || '',
-          value = (function () {
-            var iVal = input.val()
-            if (iVal === input.attr('placeholder')) {
-              return
-            }
-            // Always send a value when validating
-            // :checkboxes and :radio
-            if (input.is(':checkbox, :radio')) {
-              return userOptions && ' '
-            }
-            return iVal
-          }())
+      var 
+      
+      $input = FormInputs.inputs.filter('[name="' + input.attr('name') + '"]'),
+      userOptions = o.inputs[input.attr('name')] || '',
+      value = (function () {
+        var iVal = input.val()
+        if (iVal === input.attr('placeholder')) {
+          return
+        }
+        // Always send a value when validating
+        // :checkboxes and :radio
+        if (input.is(':checkbox, :radio')) {
+          return userOptions && ' '
+        }
+        return iVal
+      }()),
 
       // Validate
-      var test = Actions.validate({
+      test = Actions.validate({
         input: $input,
         userOptions: userOptions
-      }, value)
+      }, value),
 
       /**
        * @namespace Validation elements
        */
-      var $field = input.parents('.ideal-field'),
-          $error = $field.next('.error'),
-          $invalid = (function () {
-            if ($input.is(':checkbox, :radio')) {
-              return input.parent().siblings('.invalid-icon')
-            }
-            return input.siblings('.invalid-icon')
-          }()),
-          $valid = (function () {
-            if ($input.is(':checkbox, :radio')) {
-              return input.parent().siblings('.valid-icon')
-            }
-            return input.siblings('.valid-icon')
-          }())
+      $field = input.parents('.ideal-field'),
+      $error = $field.next('.error'),
+      $invalid = (function () {
+        if ($input.is(':checkbox, :radio')) {
+          return input.parent().siblings('.invalid-icon')
+        }
+        return input.siblings('.invalid-icon')
+      }()),
+      $valid = (function () {
+        if ($input.is(':checkbox, :radio')) {
+          return input.parent().siblings('.valid-icon')
+        }
+        return input.siblings('.valid-icon')
+      }())
 
       // Reset
       $field.removeClass('valid invalid')
@@ -264,8 +264,12 @@ $.fn.idealforms = function (ops) {
      */
     responsive: function () {
 
-      var maxWidth = LessVars.fieldWidth + FormInputs.labels.outerWidth()
-
+      var maxWidth = LessVars.fieldWidth + FormInputs.labels.outerWidth(),
+          $emptyLabel = FormInputs.labels.filter(function () {
+            return $(this).html() === '&nbsp;'
+          }),
+          $customSelect = FormInputs.select.next('.ideal-select')
+          
       if (o.responsiveAt === 'auto') {
         $form.width() < maxWidth
           ? $form.addClass('stack')
@@ -277,13 +281,11 @@ $.fn.idealforms = function (ops) {
       }
 
       // Labels
-      var $emptyLabel = FormInputs.labels.filter(function () {
-        return $(this).html() === '&nbsp;'
-      })
-      $form.is('.stack') ? $emptyLabel.hide() : $emptyLabel.show()
+      $form.is('.stack') 
+        ? $emptyLabel.hide() 
+        : $emptyLabel.show()
 
       // Custom select
-      var $customSelect = FormInputs.select.next('.ideal-select')
       $form.is('.stack')
         ? $customSelect.trigger('list')
         : $customSelect.trigger('menu')
@@ -301,9 +303,11 @@ $.fn.idealforms = function (ops) {
     .blur() // Start fresh
 
   $form.submit(function (e) {
-    if ($form.find('.ideal-field.invalid').length) {
+    var $invalid = $form.find('.ideal-field.invalid')
+    if ($invalid.length) {
       e.preventDefault()
       o.onFail()
+      $invalid.first().find('input:first').focus()
     } else {
       o.onSuccess()
     }
@@ -316,6 +320,9 @@ $.fn.idealforms = function (ops) {
     })
     Actions.responsive()
   }
+  
+  // Merge custom and default filters
+  $.extend(true, Filters, o.filters)
 
   return this
 
