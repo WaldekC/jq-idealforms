@@ -149,6 +149,7 @@
   var $form = $('#my-form');
 
   $form.idealforms({
+    responsiveAt: false,
     inputs: {
       'username': {
         filters: 'required username exclude',
@@ -170,15 +171,6 @@
         data: {
           min: 50,
           max: 200
-        }
-      },
-      'states': {
-        filters: 'exclude',
-        data: {
-          exclude: ['Select a State']
-        },
-        errors: {
-          exclude: 'Select a State.'
         }
       },
       'langs[]': {
