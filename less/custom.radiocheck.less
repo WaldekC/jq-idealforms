@@ -20,6 +20,7 @@
       .transition(~"background .15s ease-in-out, color .15s ease-in-out, border .15s ease-in-out");
       display: block;
       position: relative;
+      text-indent: -@radiocheck-icon-width*2;
       margin: 0 .8em;
       padding: .4em;
       padding-left: @radiocheck-icon-width*2;
@@ -29,11 +30,14 @@
   }
   .ideal-check,
   .ideal-radio {
-    position: absolute;
-    left: @radiocheck-icon-width/2;
+    .vertical-align() when (@radiocheck-icon-height >= @font-size) { vertical-align: text-bottom; }
+    .vertical-align() when (@radiocheck-icon-height < @font-size) { vertical-align: text-top; }
+    display: inline-block;
+    margin: 0 @radiocheck-icon-width/2;
     background: url("@{radiocheck-sprite}") left top no-repeat;
     width: @radiocheck-icon-width;
     height: @radiocheck-icon-height;
+    .vertical-align()
   }
   .ideal-radio {
     background-position: left bottom;
