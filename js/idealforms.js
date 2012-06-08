@@ -206,12 +206,12 @@ $.fn.idealforms = function (ops) {
 
       var
 
+      isRadiocheck = input.is(':checkbox, :radio'),
       $input = (function(){
-        if (input.is(':checkbox, :radio'))
+        if (isRadiocheck)
           return UserInputs.filter('[name="' + input.attr('name') + '"]')
         return UserInputs.filter(input)
       }()),
-      isRadiocheck = input.is(':checkbox, :radio'),
       userOptions = (
         o.inputs[input.attr('name')] || // by name attribute
         { filters: input.attr('class') } // by class
@@ -220,7 +220,7 @@ $.fn.idealforms = function (ops) {
         var iVal = input.val()
         if (iVal === input.attr('placeholder')) return
         // Always send a value when validating
-        // :checkboxes and :radio
+        // :checkbox and :radio
         if (isRadiocheck) return userOptions && ' '
         return iVal
       }()),
