@@ -16,8 +16,7 @@ $.fn.idealforms = function (ops) {
       alert('The form does not validate! Check again...')
     },
     responsiveAt: 'auto',
-    customInputs: true,
-    focusFirst: true
+    customInputs: true
   }, ops),
 
   $form = this, // The form
@@ -30,7 +29,7 @@ $.fn.idealforms = function (ops) {
   FormInputs = {
     inputs: $form.find('input, select, textarea, :button'),
     labels: $form.find('label:first-child'),
-    text: $form.find('input:text, input:password, textarea'),
+    text: $form.find('input:not(:checkbox, :radio)'),
     select: $form.find('select'),
     radiocheck: $form.find('input:radio, input:checkbox'),
     buttons: $form.find(':button')
@@ -64,8 +63,6 @@ $.fn.idealforms = function (ops) {
      * @private
      */
     init: (function () {
-
-      //console.log(UserInputs)
 
       var $error = $('<span class="error" />'),
           $valid = $('<i class="icon valid-icon" />'),
