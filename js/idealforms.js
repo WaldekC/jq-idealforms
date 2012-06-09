@@ -16,7 +16,8 @@ $.fn.idealforms = function (ops) {
       alert('The form does not validate! Check again...')
     },
     responsiveAt: 'auto',
-    customInputs: true
+    customInputs: true,
+    focusFirst: true
   }, ops),
 
   $form = this, // The form
