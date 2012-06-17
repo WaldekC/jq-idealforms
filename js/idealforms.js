@@ -344,6 +344,9 @@ $.fn.idealforms = function (ops) {
   // Merge custom and default flags
   $.extend(true, Flags, o.customFlags)
 
-  return this
+  // Attach public methods
+  for (var m in PublicMethods) $form[m] = PublicMethods[m]
+
+  return $form
 
 }

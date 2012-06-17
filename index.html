@@ -147,9 +147,7 @@
 <script src="js/min/jquery.idealforms.min.js"></script>
 <script>
 
-  var $form = $('#my-form');
-
-  $form.idealforms({
+  var options = {
     inputs: {
      // 'username': {
      //   filters: 'required username exclude',
@@ -199,9 +197,15 @@
         }
       }
     }
-  });
+  };
 
-  $form.find('input:first').focus();
+  var $form = $('#my-form');
+  var $idealform = $form.idealforms(options);
+
+  // $form.find('input:first').focus();
+
+  $idealform.focusfirst();
+  
 
 </script>
 
