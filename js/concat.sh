@@ -8,4 +8,4 @@ filters.js \
 flags.js \
 idealforms.js \
 end.js \
-| uglifyjs -nmf -nm -o min/jquery.idealforms.min.js
+| uglifyjs -o min/jquery.idealforms.min.js
