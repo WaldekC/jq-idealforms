@@ -6,7 +6,6 @@ to.custom.select.js \
 to.custom.radiocheck.js \
 filters.js \
 flags.js \
-public.methods.js \
 idealforms.js \
 end.js \
-| uglifyjs -o min/jquery.idealforms.min.js
+| uglifyjs -nmf -nm -o min/jquery.idealforms.min.js
