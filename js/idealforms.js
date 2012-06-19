@@ -62,8 +62,14 @@ $.fn.idealforms = function (ops) {
       var $invalid = $form.find('.ideal-field').filter(function(){
         return $(this).data('isValid') === false
       })
-      console.log($invalid)
-      return !$invalid.length 
+      return !$invalid.length
+    },
+    isValidField: function (name) {
+      var $input = 
+        $('[name="'+ name +'"]').length 
+          ? $('[name="'+ name +'"]')
+          : $('#' + name)
+      return $input.parents('.ideal-field').data('isValid') === false
     },
     focusFirst: function () {
       $form.find('input:first').focus();
@@ -337,20 +343,21 @@ $.fn.idealforms = function (ops) {
           ? $form.addClass('stack')
           : $form.removeClass('stack')
       }
+      
+      if ($form.is('.stack')) {
+        $emptyLabel.hide() 
+        $customSelect.trigger('list')
+      } else {
+        $emptyLabel.show() 
+        $customSelect.trigger('menu')
+      }
 
-      // Labels
-      $form.is('.stack') ? $emptyLabel.hide() : $emptyLabel.show()
-
-      // Custom select
-      $form.is('.stack')
-        ? $customSelect.trigger('list')
-        : $customSelect.trigger('menu')
     }
   }
 
 /*--------------------------------------------------------------------------*/
 
-  // Attach public methods
+  // attach public methods
   for (var m in PublicMethods) $form[m] = PublicMethods[m]
 
   // Attach events
@@ -364,7 +371,6 @@ $.fn.idealforms = function (ops) {
     if (!$form.isValid()) {
       e.preventDefault()
       o.onFail()
-      //$form.find('.ideal-field').each(function(){ console.log($(this).data()) })
       $form.focusFirstInvalid()
     }
     else o.onSuccess(e)
