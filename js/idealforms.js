@@ -22,28 +22,32 @@ $.fn.idealforms = function (ops) {
   }, ops),
 
   $form = this, // The form
+  formHtml = $form.html(),
 
   /**
    * @namespace All form inputs of the given form
    * @memberOf $.fn.idealforms
    * @returns {object}
    */
-  FormInputs = {
-    inputs: $form.find('input, select, textarea, :button'),
-    labels: $form.find('label:first-child'),
-    text: $form.find('input:not(:checkbox, :radio), textarea'),
-    select: $form.find('select'),
-    radiocheck: $form.find('input:radio, input:checkbox'),
-    buttons: $form.find(':button')
-  },
-  /**
+  FormInputs = function () {
+    return {
+      inputs: $form.find('input, select, textarea, :button'),
+      labels: $form.find('label:first-child'),
+      text: $form.find('input:not(:checkbox, :radio), textarea'),
+      select: $form.find('select'),
+      radiocheck: $form.find('input:radio, input:checkbox'),
+      buttons: $form.find(':button')
+    }
+  },  /**
    * All inputs specified by the user
    */
-  UserInputs = $(
-    '[name="'+ Utils.getKeys(o.inputs).join('"], [name="') +'"],' + // by name attribute
-    '.' + Utils.getKeys(Filters).join(', .') // by class
-  ),
-
+  UserInputs = function () {
+    var $inputs = $(
+      '[name="'+ Utils.getKeys(o.inputs).join('"], [name="') +'"],' + // by name attribute
+      '.' + Utils.getKeys(Filters).join(', .') // by class
+    )
+    return $inputs
+  },
 /*--------------------------------------------------------------------------*/
 
   /**
@@ -64,20 +68,24 @@ $.fn.idealforms = function (ops) {
     /** Create validation elements and neccesary markup
      * @private
      */
-    init: (function () {
+    init: function () {
 
-      var $error = $('<span class="error" />'),
-          $valid = $('<i class="icon valid-icon" />'),
-          $invalid = $('<i/>', {
-            'class': 'icon invalid-icon',
-            click: function () {
-              var $this = $(this)
-              if ($this.siblings('label').length) { // radio & check
-                $this.siblings('label:first').find('input').focus()
-              }
-              else $this.siblings('input, select, textarea').focus()
-            }
-          })
+      var 
+      
+      formInputs = FormInputs(),
+
+      $error = $('<span class="error" />'),
+      $valid = $('<i class="icon valid-icon" />'),
+      $invalid = $('<i/>', {
+        'class': 'icon invalid-icon',
+        click: function () {
+          var $this = $(this)
+          if ($this.siblings('label').length) { // radio & check
+            $this.siblings('label:first').find('input').focus()
+          }
+          else $this.siblings('input, select, textarea').focus()
+        }
+      })
 
       $form.css('visibility', 'visible').addClass('ideal-form')
       $form.children('div').addClass('ideal-wrap')
@@ -86,23 +94,23 @@ $.fn.idealforms = function (ops) {
       $form.attr('novalidate', 'novalidate')
 
       // Autocomplete causes some problems...
-      FormInputs.inputs.attr('autocomplete', 'off')
+      formInputs.inputs.attr('autocomplete', 'off')
 
       // Auto-adjust labels
-      FormInputs.labels
+      formInputs.labels
         .addClass('ideal-label')
-        .width(Utils.getMaxWidth(FormInputs.labels))
+        .width(Utils.getMaxWidth(formInputs.labels))
 
       // Text inputs & select markup
-      FormInputs.text
-        .add(FormInputs.select)
+      formInputs.text
+        .add(formInputs.select)
         .each(function () {
           var $this = $(this)
           $this.wrapAll('<span class="ideal-field"/>')
         })
 
       // Radio & Checkbox markup
-      FormInputs.radiocheck
+      formInputs.radiocheck
         .parents('.ideal-wrap')
         .each(function () {
           $(this)
@@ -112,20 +120,20 @@ $.fn.idealforms = function (ops) {
 
       // Insert icons and error in DOM
       // only for specified user inputs
-      UserInputs.parents('.ideal-field')
+      UserInputs().parents('.ideal-field')
         .append($valid.add($invalid))
         .after($error.hide())
 
       // Custom inputs
       if (o.customInputs) {
-        FormInputs.buttons.addClass('ideal-button')
-        FormInputs.select.toCustomSelect()
-        FormInputs.radiocheck.toCustomRadioCheck()
+        formInputs.buttons.addClass('ideal-button')
+        formInputs.select.toCustomSelect()
+        formInputs.radiocheck.toCustomRadioCheck()
       }
 
       // Placeholder support
       if (!('placeholder' in $('<input/>')[0])) {
-        FormInputs.text.each(function () {
+        formInputs.text.each(function () {
           $(this).val($(this).attr('placeholder'))
         }).on({
           focus: function () {
@@ -136,7 +144,7 @@ $.fn.idealforms = function (ops) {
           }
         })
       }
-    }()),
+    },
 
     /** Validates an input
      * @memberOf Actions
@@ -207,8 +215,8 @@ $.fn.idealforms = function (ops) {
       isRadiocheck = input.is(':checkbox, :radio'),
       $input = (function(){
         if (isRadiocheck)
-          return UserInputs.filter('[name="' + input.attr('name') + '"]')
-        return UserInputs.filter(input)
+          return UserInputs().filter('[name="' + input.attr('name') + '"]')
+        return UserInputs().filter(input)
       }()),
       userOptions = (
         o.inputs[input.attr('name')] || // by name attribute
@@ -284,11 +292,13 @@ $.fn.idealforms = function (ops) {
 
       var
 
-      maxWidth = LessVars.fieldWidth + FormInputs.labels.outerWidth(),
-      $emptyLabel = FormInputs.labels.filter(function () {
+      formInputs = FormInputs(),
+
+      maxWidth = LessVars.fieldWidth + formInputs.labels.outerWidth(),
+      $emptyLabel = formInputs.labels.filter(function () {
         return $(this).html() === '&nbsp;'
       }),
-      $customSelect = FormInputs.select.next('.ideal-select')
+      $customSelect = formInputs.select.next('.ideal-select')
 
       if (o.responsiveAt === 'auto') {
         $form.width() < maxWidth
@@ -343,21 +353,29 @@ $.fn.idealforms = function (ops) {
         .focus()
       return $form
     },
+    reload: function () {
+      $form.empty().html(formHtml)
+      Actions.init()
+      Actions.responsive()
+      $form.reset().fresh()
+      console.log()
+    },
     fresh: function () {
-      UserInputs
+      UserInputs()
         .blur()
         .parents('.ideal-field')
         .removeClass('valid invalid')
       return $form
     },
     reset: function () {
-      FormInputs.text.val('') // text inputs
-      FormInputs.radiocheck.removeAttr('checked') // :radio & :checkbox
+      var formInputs = FormInputs()
+      formInputs.text.val('') // text inputs
+      formInputs.radiocheck.removeAttr('checked') // :radio & :checkbox
       // Select and custom select
-      FormInputs.select.find('option').first().prop('selected', true)
+      formInputs.select.find('option').first().prop('selected', true)
       $form.find('.ideal-select').trigger('reset')
       // Reset all
-      FormInputs.inputs.change().blur()
+      formInputs.inputs.change().blur()
       $form.focusFirst()
       return $form
     }
@@ -365,11 +383,13 @@ $.fn.idealforms = function (ops) {
 
 /*--------------------------------------------------------------------------*/
 
+  Actions.init()
+
   // attach public methods
   for (var m in PublicMethods) $form[m] = PublicMethods[m]
 
   // Attach events
-  UserInputs
+  UserInputs()
     .on('keyup change focus blur', function (e) {
       Actions.analyze($(this), e.type)
     }) 

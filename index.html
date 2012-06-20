@@ -54,7 +54,7 @@
       <div><label>Password:</label><input id="password" class="required pass" type="password"/></div>
       <div><label>E-Mail:</label><input name="email" type="email"/></div>
       <div><label>Date:</label><input name="date" type="text" placeholder="mm/dd/yy"/></div>
-      <div>
+      <div id="languages">
         <label>Languages:</label>
         <label><input type="checkbox" name="langs[]" value="English"/>English</label>
         <label><input type="checkbox" name="langs[]" value="Chinese"/>Chinese</label>
@@ -69,7 +69,7 @@
         <label><input type="radio" name="radio"/>Three</label>
       </div>
       <div><label>State:</label>
-      <select name="states">
+      <select id="states" name="states">
         <option value="Select a State">Select a State</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -194,6 +194,10 @@
   // $form.find('input:first').focus();
 
   $idealform.focusFirst();
+
+  $('#states').append('<option>Alaaya</option>');
+  $('#languages').append('<label><input type="checkbox" name="langs[]" value="Japanese"/>Japanese</label>');
+  $idealform.reload()
 
 </script>
 

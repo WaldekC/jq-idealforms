@@ -265,6 +265,11 @@ $.fn.toCustomSelect = function () {
       Actions.change(0)
     })
 
+    // Populate
+    Select.select.on('reset', function(){
+      Actions.change(0)
+    })
+
     Select.select.trigger('menu') // Default to "menu mode"
   })
 }
