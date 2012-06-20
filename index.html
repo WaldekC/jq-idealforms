@@ -147,11 +147,6 @@
 <script>
 
   var options = {
-    customFlags: {
-      'type9': function(i, e){
-        if (e === 'keyup') i.val(i.val() + '9');
-      }
-    },
     inputs: {
      // 'username': {
      //   filters: 'required username exclude',
@@ -162,10 +157,6 @@
      // 'pass': {
      //   filters: 'required pass',
      // },
-      'email': {
-        filters: 'email',
-        flags: 'type9'
-      },
       'date': {
         filters: 'date'
       },
@@ -203,10 +194,6 @@
   // $form.find('input:first').focus();
 
   $idealform.focusFirst();
-
-  $('#reset').click(function(){
-   console.log(!$idealform.isValidField('username'))
-  });
 
 </script>
 
