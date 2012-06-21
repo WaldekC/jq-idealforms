@@ -191,9 +191,11 @@
   var $form = $('#my-form');
   var $idealform = $form.idealforms(options);
 
-  // $form.find('input:first').focus();
-
   $idealform.focusFirst();
+
+  $('#reset').click(function(){
+   $idealform.reset().fresh().focusFirst()
+  });
 
 </script>
 
