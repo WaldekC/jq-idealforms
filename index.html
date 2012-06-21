@@ -158,7 +158,12 @@
      //   filters: 'required pass',
      // },
       'date': {
-        filters: 'date'
+        filters: 'date',
+        data: {
+          date: {
+            format: 'dd-mm-yyyy',
+          }
+        }
       },
       'comments': {
         filters: 'min max',
@@ -194,10 +199,6 @@
   // $form.find('input:first').focus();
 
   $idealform.focusFirst();
-
-  $('#states').append('<option>Alaaya</option>');
-  $('#languages').append('<label><input type="checkbox" name="langs[]" value="Japanese"/>Japanese</label>');
-  $idealform.reload()
 
 </script>
 

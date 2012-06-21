@@ -62,13 +62,29 @@ var Filters = {
   },
   date: {
     regex: function (input, value) {
-      var match = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(value),
-          isDate = function (m, d, y) {
-            return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= (new Date(y, m, 0)).getDate()
-          }
-      return match && isDate(match[1], match[2], match[3])
+      var
+
+      data = input.userOptions.data
+        ? input.userOptions.data.date
+        : { format: 'mm/dd/yyyy'},
+      
+      format = (function () {
+        var 
+        
+        d = /d{1,}/.exec(data.format),
+        m = /m{1,}/.exec(data.format),
+        y = /y{1,}/.exec(data.format),
+        s = /[^\w]/.exec(data.format)
+
+        console.log(m[0])
+
+      }()),
+
+      isDate = function (m, d, y) {
+        return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= (new Date(y, m, 0)).getDate()
+      }
     },
-    error: 'Must be a valid date. <em>(e.g. mm/dd/yyyy)</em>'
+    error: 'Must be a valid date.'
   },
   exclude: {
     regex: function (input, value) {
