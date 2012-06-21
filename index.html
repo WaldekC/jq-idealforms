@@ -53,7 +53,7 @@
       <div><label>Username:</label><input id="username" class="required username" type="text"/></div>
       <div><label>Password:</label><input id="password" class="required pass" type="password"/></div>
       <div><label>E-Mail:</label><input name="email" class="email" type="email"/></div>
-      <div><label>Date:</label><input name="date" type="text" placeholder="mm/dd/yy"/></div>
+      <div><label>Date:</label><input name="date" class="date" type="text" placeholder="mm/dd/yy"/></div>
       <div id="languages">
         <label>Languages:</label>
         <label><input type="checkbox" name="langs[]" value="English"/>English</label>
@@ -157,9 +157,6 @@
      // 'pass': {
      //   filters: 'required pass',
      // },
-      'date': {
-        filters: 'date'
-      }
       'comments': {
         filters: 'min max',
         data: {
@@ -194,7 +191,7 @@
   $idealform.focusFirst();
 
   $('#reset').click(function(){
-   $idealform.reset().fresh().focusFirst()
+    $idealform.reset().fresh().focusFirst()
   });
 
 </script>
