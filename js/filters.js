@@ -66,7 +66,7 @@ var Filters = {
 
       data = input.userOptions.data
         ? input.userOptions.data.date
-        : { format: 'dd/mm/yyyy' }, // default format
+        : { format: 'mm/dd/yyyy' }, // default format
 
       delimiter = /[^mdy]/.exec(data.format)[0],
       userFormat = data.format.split(delimiter),
