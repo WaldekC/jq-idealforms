@@ -186,7 +186,7 @@ $.fn.idealforms = function (ops) {
             }
           }
         }
-
+        
       }
 
       return {

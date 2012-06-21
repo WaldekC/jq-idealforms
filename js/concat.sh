@@ -1,9 +1,9 @@
 #!/bin/sh
 cat \
+dep/to.custom.select.js \
+dep/to.custom.radiocheck.js \
 start.js \
 utils.js \
-to.custom.select.js \
-to.custom.radiocheck.js \
 filters.js \
 flags.js \
 idealforms.js \
