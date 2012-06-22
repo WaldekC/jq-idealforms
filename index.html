@@ -174,12 +174,14 @@
       	}
       },
       'langs[]': {
-        filters: 'min',
+        filters: 'min max',
         data: {
-          min: 2
+          min: 2,
+          max: 3
         },
         errors: {
-          min: 'Check at least <strong>2</strong> options.'
+          min: 'Check at least <strong>2</strong> options.',
+          max: '<strong>3</strong> options maximum.'
         }
       }
     }

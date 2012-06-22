@@ -44,18 +44,24 @@ var Filters = {
   },
   min: {
     regex: function (input, value) {
-      var min = input.userOptions.data.min
-      if (input.input.is(':checkbox, :radio')) {
+      var $input = input.input,
+          min = input.userOptions.data.min
+      if ($input.is(':checkbox, :radio')) {
         this.error = 'Check at least <strong>' + min + '</strong>'
-        return input.input.filter(':checked').length >= min
+        return $input.filter(':checked').length >= min
       }
       this.error = 'Must be at least <strong>' + min + '</strong> characters long.'
-      return value.length > min - 1
+      return value.length >= min
     }
   },
   max: {
     regex: function (input, value) {
-      var max = input.userOptions.data.max
+      var $input = input.input,
+          max = input.userOptions.data.max
+      if ($input.is(':checkbox, :radio')) {
+        this.error = 'Check <strong>' + max + '</strong> maximum.'
+        return $input.filter(':checked').length <= max
+      }
       this.error = '<strong>' + max + '</strong> characters max.'
       return value.length <= max
     }
