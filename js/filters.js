@@ -122,7 +122,6 @@ var Filters = {
           extensions = input.userOptions.data.extension,
           re = new RegExp('\\.'+ extensions.join('|') +'$', 'i'),
           valid = false
-      console.log(re)
       for (var i = 0, len = files.length; i < len; i++) {
         if (re.test(files[i].name)) valid = true
         else valid = false
