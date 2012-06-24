@@ -115,5 +115,18 @@ var Filters = {
       ) return false
       return $input.val() === $equals.val()
     }
+  },
+  extension: {
+    regex: function (input, value) {
+      var files = value.split(','),
+          extensions = input.userOptions.data.extension,
+          re = new RegExp('\.'+ extensions.join('|'), 'i')
+      for (var i = 0, len = files.length; i < len; i++)
+        if (re.test(files[i])) return true
+      this.error =
+        'Please select a file with a valid extension.' +
+        '<em>(e.g. "'+ extensions.join('", "') +'")</em>'
+      return false
+    }
   }
 }
