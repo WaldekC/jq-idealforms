@@ -210,37 +210,37 @@
 
   $idealform.focusFirst();
 
-  var newFields = [
-    {
-      name: 'animals',
-      title: 'Animals',
-      addAfter: 'email',
-      type: 'radio',
-      list: ['Dog', 'Elephant', 'Crocodile', 'Spider']
-    },
-    {
-      name: 'zip',
-      title: 'Zip Code',
-      filters: 'required zip',
-      type: 'text'
-    },
-    {
-      name: 'instruments',
-      title: 'Instruments',
-      addAfter: 'langs[]',
-      filters: 'exclude',
-      data: { exclude: ['Select an instrument'] },
-      type: 'select',
-      list: [
-        'Select an instrument', 
-        'Piano', 
-        'Violin', 
-        'Guitar'
-      ]
-    }
-  ];
+ // var newFields = [
+ //   {
+ //     name: 'animals',
+ //     title: 'Animals',
+ //     addAfter: 'email',
+ //     type: 'radio',
+ //     list: ['Dog', 'Elephant', 'Crocodile', 'Spider']
+ //   },
+ //   {
+ //     name: 'zip',
+ //     title: 'Zip Code',
+ //     filters: 'required zip',
+ //     type: 'text'
+ //   },
+ //   {
+ //     name: 'instruments',
+ //     title: 'Instruments',
+ //     addAfter: 'langs[]',
+ //     filters: 'exclude',
+ //     data: { exclude: ['Select an instrument'] },
+ //     type: 'select',
+ //     list: [
+ //       'Select an instrument',
+ //       'Piano',
+ //       'Violin',
+ //       'Guitar'
+ //     ]
+ //   }
+ // ];
 
-  $idealform.addFields(newFields);
+ // $idealform.addFields(newFields);
 
 </script>
 
