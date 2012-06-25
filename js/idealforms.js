@@ -42,7 +42,7 @@ $.fn.idealforms = function (ops) {
    */
   UserInputs = $(
     '[name="'+ Utils.getKeys(o.inputs).join('"], [name="') +'"],' + // by name attribute
-    'input.' + Utils.getKeys(Filters).join(', .') + ', input.required'// by class
+    '.' + Utils.getKeys(Filters).join(', .') // by class
   ),
 
 /*--------------------------------------------------------------------------*/
@@ -162,8 +162,8 @@ $.fn.idealforms = function (ops) {
           error = (
             userOptions.errors && userOptions.errors.required
               ? userOptions.errors.required
-              : 'This field is required.'
-          )
+              : Filters.required.error
+            )
           isValid = false
         }
 

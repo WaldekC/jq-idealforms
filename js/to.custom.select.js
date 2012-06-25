@@ -23,13 +23,15 @@ $.fn.toCustomSelect = function () {
               items.push('<li class="item" ideal-value="' + $this.val() + '">' + $this.text() + '</li>')
             })
             return items
-          }())
+          }()),
+          defOptionIdx = $options.filter(':selected').index()
 
       $menu.append('<ul class="sub">' + items.join('') + '</ul>')
       $newSelect.append($menu)
 
       return {
         options: $options,
+        defOption: $menu.find('.item').index(defOptionIdx),
         select: $newSelect,
         title: $menu.find('.title'),
         sub: $menu.find('.sub'),
@@ -162,13 +164,17 @@ $.fn.toCustomSelect = function () {
             Actions.scrollIntoView('up')
           },
           'default': function () { // Letter
-            var letter = String.fromCharCode(key),
-                selIdx = Select.items.filter('.selected').parent().index(),
-                curIdx = Select.items.filter(function () {
+            var
+            letter = String.fromCharCode(key),
+            selIdx = Select.items.filter('.selected').parent().index(),
+            curIdx =
+              Select.items
+                .not(Select.defoption)
+                .filter(function () {
                   var re = new RegExp('^' + letter, 'i')
                   return re.test($(this).text())
-                }).first().index()
-
+                })
+                .first().index()
             Actions.change(!~curIdx ? selIdx : curIdx)
             Actions.scrollToItem()
             Actions.focusHack()
