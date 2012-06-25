@@ -39,6 +39,7 @@ $.fn.idealforms = function (ops) {
       file: $form.find('[type="file"]')
     }
   },
+
   /**
    * All inputs specified by the user
    */
@@ -140,6 +141,9 @@ $.fn.idealforms = function (ops) {
     adjust: function () {
       var formInputs = FormInputs()
 
+      // Autocomplete causes some problems...
+      formInputs.inputs.attr('autocomplete', 'off')
+
       // Adjust labels
       formInputs.labels
         .addClass('ideal-label')
@@ -169,8 +173,6 @@ $.fn.idealforms = function (ops) {
       $form.css('visibility', 'visible').addClass('ideal-form')
       // Add novalidate tag if HTML5.
       $form.attr('novalidate', 'novalidate')
-      // Autocomplete causes some problems...
-      formInputs.inputs.attr('autocomplete', 'off')
       Actions.adjust()
       formInputs.inputs.each(function(){ Actions.doMarkup($(this)) })
     },
@@ -422,6 +424,8 @@ $.fn.idealforms = function (ops) {
 
       // Reload form
       $form.reload()
+
+      return $form
     },
 
     getInvalid: function () {
