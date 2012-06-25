@@ -126,7 +126,6 @@
       </select></div>
       <div><label>Comments:</label><textarea id="comments" name="comments"></textarea></div>
       <div><label>&nbsp;</label><button type="submit">Submit</button><button id="reset" type="button">Reset</button></div>
-      <div style="clear: both;"></div>
     </form>
   </div>
 </div>
@@ -148,7 +147,7 @@
 <script>
 
   var users = ['admin', 'user'];
-  
+
   var options = {
     inputs: {
      // 'username': {
@@ -205,11 +204,11 @@
   var $form = $('#my-form');
   var $idealform = $form.idealforms(options);
 
-  $idealform.focusFirst();
-
   $('#reset').click(function(){
     $idealform.reset().fresh().focusFirst()
   });
+
+  $idealform.focusFirst();
 
 </script>
 

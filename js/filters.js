@@ -3,7 +3,7 @@
  */
 var Filters = {
   required: {
-    error: 'This field is required.'
+    error: 'This field is required'
   },
   number: {
     regex: /\d+/,
