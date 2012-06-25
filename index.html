@@ -215,16 +215,14 @@
       name: 'animals',
       title: 'Animals',
       addAfter: 'email',
-      markup: {
-        type: 'radio',
-        list: ['Dog', 'Elephant', 'Crocodile', 'Spider']
-      }
+      type: 'radio',
+      list: ['Dog', 'Elephant', 'Crocodile', 'Spider']
     },
     {
       name: 'zip',
       title: 'Zip Code',
       filters: 'required zip',
-      markup: { type: 'text' }
+      type: 'text'
     },
     {
       name: 'instruments',
@@ -232,15 +230,13 @@
       addAfter: 'langs[]',
       filters: 'exclude',
       data: { exclude: ['Select an instrument'] },
-      markup: {
-        type: 'select',
-        list: [
-          'Select an instrument', 
-          'Piano', 
-          'Violin', 
-          'Guitar'
-        ]
-      }
+      type: 'select',
+      list: [
+        'Select an instrument', 
+        'Piano', 
+        'Violin', 
+        'Guitar'
+      ]
     }
   ];
 
