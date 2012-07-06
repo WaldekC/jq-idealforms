@@ -50,15 +50,25 @@
   </div>
   <div class="sevencol last">
     <form id="my-form">
-        <div><h2>Essential:</h2></div>
+        <div>
+          <h2>Essential:</h2>
+          <p>Personal user information.</p>
+        </div>
         <div><label>Username:</label><input id="username" name="username" type="text"/></div>
         <div><label>Password:</label><input id="password" name="password" type="password"/></div>
-        <div><label>E-Mail:</label><input name="email" class="email" type="email"/></div>
-        <div><h2>Other:</h2></div>
+        <div><label>E-Mail:</label><input name="email" class="required email" type="email"/></div>
+
+        <div>
+          <h2>Other:</h2>
+          <p>Extra stuff worth considering.</p>
+        </div>
         <div><label>Date:</label><input name="date" class="date" type="text" placeholder="mm/dd/yyyy"/></div>
         <div><label>Image:</label><input name="file" multiple type="file"/></div>
 
-        <div><h2>Options:</h2></div>
+        <div>
+          <h2>Options:</h2>
+          <p>Many options to select from.</p>
+        </div>
         <div id="languages">
           <label>Languages:</label>
           <label><input type="checkbox" name="langs[]" value="English"/>English</label>
@@ -74,7 +84,10 @@
           <label><input type="radio" name="radio"/>Three</label>
         </div>
 
-        <div><h2>Contact:</h2></div>
+        <div>
+          <h2>Contact:</h2>
+          <p>Typical contact stuff.</p>
+        </div>
         <div><label>Zip:</label><input type="text" name="zip" class="zip"/></div>
         <div><label>Phone:</label><input type="tel" name="phone" class="phone"/></div>
         <div><label>State:</label>
@@ -133,7 +146,7 @@
           <option value="WY">Wyoming</option>
         </select></div>
       <div><label>Comments:</label><textarea id="comments" name="comments"></textarea></div>
-      
+
       <div><hr></div>
       <div><label>&raquo;&raquo;&raquo;</label><button type="submit">Submit</button><button id="reset" type="button">Reset</button></div>
 
