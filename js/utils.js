@@ -69,8 +69,8 @@ var Utils = {
    * @param type `type` or `tagName` of the input
    */
   makeInput: function (name, type, list) {
-    var markup,
-        items = []
+
+    var markup, items = [], i, len
 
     // Text & file
     if (/(text|password|email|number|search|url|tel|file)/.test(type))
@@ -79,7 +79,7 @@ var Utils = {
     // Select
     if (/select/.test(type)) {
       items = []
-      for (var i = 0, len = list.length; i < len; i++)
+      for (i = 0, len = list.length; i < len; i++)
         items.push('<option value="'+ list[i] +'">'+ list[i] +'</option>')
       markup =
         '<select id="'+ name +'" name="'+ name +'">'+
@@ -90,7 +90,7 @@ var Utils = {
     // Radiocheck
     if (/(radio|checkbox)/.test(type)) {
       items = []
-      for (var i = 0, len = list.length; i < len; i++)
+      for (i = 0, len = list.length; i < len; i++)
         items.push(
           '<label>'+
             '<input type="'+ type +'" name="'+ name +'" value="'+ list[i] +'" />'+

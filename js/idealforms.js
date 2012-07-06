@@ -1,6 +1,7 @@
 /**
  * @namespace jq-idealforms jQuery plugin
  */
+
 $.fn.idealforms = function (ops) {
 
   var
@@ -23,12 +24,14 @@ $.fn.idealforms = function (ops) {
 
   $form = this, // The form
 
+  Filters = getFilters(), // Get filters with localized errors
+
   /**
    * @namespace All form inputs of the given form
    * @memberOf $.fn.idealforms
    * @returns {object}
    */
-  FormInputs = function () {
+  getFormInputs = function () {
     return {
       inputs: $form.find('input, select, textarea, :button'),
       labels: $form.find('div > label:first-child'),
@@ -36,14 +39,14 @@ $.fn.idealforms = function (ops) {
       select: $form.find('select'),
       radiocheck: $form.find('input[type="radio"], input[type="checkbox"]'),
       buttons: $form.find(':button'),
-      file: $form.find('[type="file"]')
+      file: $form.find('input[type="file"]')
     }
   },
 
   /**
    * All inputs specified by the user
    */
-  UserInputs = function () {
+  getUserInputs = function () {
     return $(
       '[name="'+ Utils.getKeys(o.inputs).join('"], [name="') +'"],' + // by name attribute
       '.' + Utils.getKeys(Filters).join(', .') // by class
@@ -139,7 +142,7 @@ $.fn.idealforms = function (ops) {
      * @memberOf Actions
      */
     adjust: function () {
-      var formInputs = FormInputs()
+      var formInputs = getFormInputs()
 
       // Autocomplete causes some problems...
       formInputs.inputs.attr('autocomplete', 'off')
@@ -169,7 +172,7 @@ $.fn.idealforms = function (ops) {
      * @memberOf Actions
      */
     init: function () {
-      var formInputs = FormInputs()
+      var formInputs = getFormInputs()
       $form.css('visibility', 'visible').addClass('ideal-form')
       // Add novalidate tag if HTML5.
       $form.attr('novalidate', 'novalidate')
@@ -209,7 +212,7 @@ $.fn.idealforms = function (ops) {
           userFilters = userFilters.split(/\s/)
           for (var i = 0, len = userFilters.length; i < len; i++) {
             var uf = userFilters[i],
-                theFilter = Filters[uf] || ''
+                theFilter = Filters[uf] || {}
             if (
               theFilter && (
                 Utils.isFunction(theFilter.regex) && !theFilter.regex(input, value) ||
@@ -244,10 +247,9 @@ $.fn.idealforms = function (ops) {
       var
 
       isRadiocheck = input.is('[type="checkbox"], [type="radio"]'),
-      isFile = input.is('[type="file"]'),
 
       $input = (function(){
-        var userInputs = UserInputs()
+        var userInputs = getUserInputs()
         if (isRadiocheck)
           return userInputs.filter('[name="' + input.attr('name') + '"]')
         return userInputs.filter(input)
@@ -327,7 +329,7 @@ $.fn.idealforms = function (ops) {
      * @memberOf Actions
      */
     attachEvents: function () {
-      UserInputs()
+      getUserInputs()
         .on('keyup change focus blur', function (e) {
           Actions.analyze($(this), e.type)
         })
@@ -340,7 +342,7 @@ $.fn.idealforms = function (ops) {
 
       var
 
-      formInputs = FormInputs(),
+      formInputs = getFormInputs(),
 
       maxWidth = LessVars.fieldWidth + formInputs.labels.outerWidth(),
       $emptyLabel = formInputs.labels.filter(function () {
@@ -463,7 +465,7 @@ $.fn.idealforms = function (ops) {
     },
 
     fresh: function () {
-      UserInputs()
+      getUserInputs()
         .blur()
         .parents('.ideal-field')
         .removeClass('valid invalid')
@@ -477,9 +479,9 @@ $.fn.idealforms = function (ops) {
     },
 
     reset: function () {
-      var formInputs = FormInputs()
+      var formInputs = getFormInputs()
       formInputs.text.val('') // text inputs
-      formInputs.radiocheck.removeAttr('checked') // [type="radio"] & [type="checkbox"]
+      formInputs.radiocheck.removeAttr('checked') // radio & check
       // Select and custom select
       formInputs.select.find('option').first().prop('selected', true)
       $form.find('.ideal-select').trigger('reset')
