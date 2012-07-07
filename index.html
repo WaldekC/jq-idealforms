@@ -29,26 +29,7 @@
 
 <div class="container clearfix">
 <div class="row">
-
-  <div class="threecol">
-    <h1>Ideal Forms</h1>
-    <p><strong>jq-idealforms</strong> is a small framework to build awesome responsive forms. It's built on top of jQuery and LESS.</p>
-    <h3>Features:</h3>
-    <ul>
-      <li>Fully responsive. (aka adaptive, adapts to the container, no css media queries needed)</li>
-      <li>Keyboard support.</li>
-      <li>Customizable input types with <a href="http://lesscss.org/">LESS</a>, the dynamic css language.</li>
-      <li>"On the spot" validation.</li>
-      <li>Placeholder support for every browser.</li>
-    </ul>
-  </div>
-  <div class="twocol mycol">
-    <h2>Adaptive</h2>
-    <p>The <strong>adaptive</strong> approach is the key to responsiveness everywhere, compatible with every browser, and works with any grid system.</p>
-    <h2>Custom</h2>
-    <p>To customize it open <strong>jq-idealforms.less</strong> and fiddle with the "user config". Then compile into css and load it inside your project. Quick &amp; easy.</p>
-  </div>
-  <div class="sevencol last">
+  <div class="twelvecol">
     <form id="my-form">
         <div>
           <h2>Essential:</h2>
@@ -57,11 +38,6 @@
         <div><label>Username:</label><input id="username" name="username" type="text"/></div>
         <div><label>Password:</label><input id="password" name="password" type="password"/></div>
         <div><label>E-Mail:</label><input name="email" class="required email" type="email"/></div>
-
-        <div>
-          <h2>Other:</h2>
-          <p>Extra stuff worth considering</p>
-        </div>
         <div><label>Date:</label><input name="date" class="date" type="text" placeholder="mm/dd/yyyy"/></div>
         <div><label>Image:</label><input name="file" multiple type="file"/></div>
 
@@ -148,7 +124,7 @@
       <div><label>Comments:</label><textarea id="comments" name="comments"></textarea></div>
 
       <div><hr></div>
-      <div><label>&nbsp;</label><button type="submit">Submit</button><button id="reset" type="button">Reset</button></div>
+      <div><button type="submit">Submit</button><button id="reset" type="button">Reset</button></div>
 
     </form>
   </div>
