@@ -93,3 +93,12 @@ footer a:visited {
   width: 350px;
   height: 100px;
 }
+
+@media all and (max-width: 480px) {
+  #my-form {
+    padding: 1em;
+  }
+  #calltoaction { float: left; margin: 0; }
+  #download, #title, #calltoaction { float: left; clear: both; }
+  #download { float: left; }
+}
