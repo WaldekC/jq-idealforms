@@ -94,7 +94,7 @@ footer a:visited {
   height: 100px;
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 768px) {
   header { margin-bottom: 30px; }
   footer { margin-top: 30px; }
   #my-form { padding: 1em; margin-top: 30px; }
