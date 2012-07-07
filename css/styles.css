@@ -1,5 +1,5 @@
 body {
-  font: normal 15px/1.7 Arial, Helvetica, Free Sans, sans-serif;
+  font: normal 15px/1.5 Arial, Helvetica, Free Sans, sans-serif;
   color: #222;
   background: #eee;
 }
@@ -10,13 +10,13 @@ h1, h2, h3 {
   line-height: 1;
 }
 h1 {
-  font-size: 38px;
+  font-size: 30px;
 }
 p {
   margin: .5em 0 1em 0;
 }
 ul {
-  margin: 0;
+  margin: 0 0 1em 0;
   padding: 0 1em;
 }
 li {
