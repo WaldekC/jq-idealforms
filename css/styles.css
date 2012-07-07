@@ -61,6 +61,9 @@ footer a:visited {
   margin: 0;
   line-height: 34px;
 }
+#title img {
+  vertical-align: middle;
+}
 #calltoaction {
   float: right;
   margin: 0 2em;
