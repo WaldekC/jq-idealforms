@@ -3,27 +3,27 @@ body {
   color: #222;
   background: url(../img/pattern.png);
 }
-h1, h2, h3 {
+.content h1, h2, h3 {
   margin: 0;
   padding: 0;
   margin-bottom: .5em;
   line-height: 1;
 }
-h1 {
+.content h1 {
   font-size: 30px;
 }
-p {
+.content p {
   margin: .5em 0 1em 0;
 }
-ul {
+.content ul {
   margin: 0 0 1em 0;
   padding: 0 1em;
 }
-li {
+.content li {
   margin: .5em 0;
 }
-a:link,
-a:visited {
+.content a:link,
+.content a:visited {
   color: #2680BF;
   text-decoration: none;
   border-bottom: 1px solid #2680BF;
