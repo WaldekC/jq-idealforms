@@ -1074,6 +1074,7 @@ button.ideal-file-upload:active {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: none;
   position: relative;
   z-index: 2;
   margin-top: -1px;
