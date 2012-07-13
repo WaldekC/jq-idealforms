@@ -1,5 +1,5 @@
 /**
-* Custom tabs for Ideal Forms
+ * Custom tabs for Ideal Forms
  */
 $.fn.tabs = function (ops) {
 
