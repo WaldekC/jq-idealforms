@@ -29,8 +29,6 @@ $.fn.tabs = function (ops) {
     return $(tabs.join(''))
   }()),
 
-  maxWidth = 0,
-
   Actions = {
     getCurIdx: function () {
       return $tabs
@@ -105,7 +103,6 @@ $.fn.tabs = function (ops) {
       var idx = Actions.getTabIdxByName(name),
           $counter = $tabs.eq(idx).find('.ideal-tabs-tab-counter')
       $counter.removeClass('ideal-tabs-tab-counter-zero')
-      console.log(name + ':' + text)
       if (!text)
         $counter.addClass('ideal-tabs-tab-counter-zero')
       $counter
@@ -133,12 +130,6 @@ $.fn.tabs = function (ops) {
   $wrapper
     .append($tabs)
     .appendTo($container)
-
-  $tabs.each(function () {
-    maxWidth += $(this).outerWidth()
-  })
-  if (maxWidth > $wrapper.outerWidth())
-    $wrapper.addClass('ideal-tabs-wrap-full')
 
   $contents
     .addClass('ideal-tabs-content')
