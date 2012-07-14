@@ -18,7 +18,7 @@ $.fn.idealforms = function (ops) {
       alert('Thank you...')
     },
     onFail: function () {
-      alert('There are '+ $form.getInvalid().length +' invalid fields.')
+      alert($form.getInvalid().length +' invalid fields.')
     },
     responsiveAt: 'auto',
     customInputs: true
