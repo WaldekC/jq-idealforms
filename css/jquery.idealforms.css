@@ -25,7 +25,7 @@ textarea{overflow:auto;vertical-align:top;}
 .ideal-form .ideal-wrap{float:left;clear:both;position:relative;margin:.5em 0;}
 .ideal-form .ideal-wrap:first-child{margin-top:0;}
 .ideal-form .ideal-label,.ideal-form .ideal-field{float:left;position:relative;}
-.ideal-form .ideal-label{top:.4em;max-width:auto;margin:0 1.5em 0 0;text-align:left;color:#222222;}
+.ideal-form .ideal-label{top:.4em;max-width:auto;margin:0 1.5em 0 0;text-align:left;color:#1f4f73;}
 .ideal-form input[type="text"],.ideal-form input[type="password"],.ideal-form input[type="email"],.ideal-form input[type="number"],.ideal-form input[type="search"],.ideal-form input[type="url"],.ideal-form input[type="tel"],.ideal-form textarea,.ideal-form select{font-size:15px;font-family:sans-serif;padding:7.5px;width:225px;border:1px solid #aaaaaa;background:#ffffff;outline:0;color:#666666;border-radius:3px;-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.15),transparent 0 0 0;-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.15),transparent 0 0 0;box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.15),transparent 0 0 0;-webkit-transition:background 0.3s ease-in-out;-moz-transition:background 0.3s ease-in-out;-ms-transition:background 0.3s ease-in-out;-o-transition:background 0.3s ease-in-out;}
 .ideal-form textarea{resize:none;}
 .ideal-form input[type="radio"],.ideal-form input[type="checkbox"]{margin-right:.5em;}
@@ -49,7 +49,7 @@ textarea{overflow:auto;vertical-align:top;}
 .ideal-form .error.hidden{visibility:hidden;}
 .ideal-form.stack .ideal-field,.ideal-form.stack .ideal-full-width,.ideal-form.stack .error{width:87.54863813229572% !important;}
 .ideal-form.stack .ideal-wrap,.ideal-form.stack input[type="text"],.ideal-form.stack input[type="password"],.ideal-form.stack input[type="email"],.ideal-form.stack input[type="number"],.ideal-form.stack input[type="search"],.ideal-form.stack input[type="url"],.ideal-form.stack input[type="tel"],.ideal-form.stack textarea,.ideal-form.stack select{width:100% !important;max-width:337.5px;}
-.ideal-form.stack .ideal-label{text-align:left;padding-bottom:.3em;top:0;}
+.ideal-form.stack .ideal-label{text-align:left;padding-bottom:.5em;top:0;}
 .ideal-form.stack .error{position:inherit;float:left;clear:left;right:0;margin-right:0;top:100%;margin-top:.3em;z-index:1;border-radius:3px;}
 .ideal-form.stack .error:after{content:".";line-height:0;text-indent:-9999px;position:absolute;top:0;margin-top:-18px;left:50%;margin-left:-10px;border-style:solid;border-width:10px 10px 10px 10px;border-color:transparent transparent #1f4f73 transparent;}
 .ideal-form.stack .error.hidden{position:absolute;}
