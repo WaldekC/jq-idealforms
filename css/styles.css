@@ -39,6 +39,12 @@ header {
   border-bottom: 1px solid #2680BF;
   font-weight: bold;
 }
+.content code {
+  font-family: Menlo, Consolas, Courier New, monospaced;
+  background: white;
+  padding: .2em .5em;
+  font-size: 85%;
+}
 footer {
   padding: 40px 0;
   background: #333;
@@ -77,7 +83,7 @@ footer a:visited {
 #download {
   float: right;
   background: white;
-  padding: .3em 1.6em;
+  padding: .5em 1.6em;
   color: #285E85;
   text-decoration: none;
   font-weight: bold;
@@ -94,7 +100,7 @@ footer a:visited {
 }
 
 
-/* Form 
+/* Form
  * ------------------------------------------------ */
 
 #my-form {
@@ -109,7 +115,7 @@ footer a:visited {
 }
 
 
-/* Responsive 
+/* Responsive
  * ------------------------------------------------ */
 
 @media all and (max-width: 768px) {
