@@ -92,6 +92,11 @@ footer a:visited {
 .mycol {
   padding-top: 14px;
 }
+
+
+/* Form 
+ * ------------------------------------------------ */
+
 #my-form {
   border: 1px solid #ccc;
   padding: 3em;
@@ -102,6 +107,10 @@ footer a:visited {
   width: 350px;
   height: 100px;
 }
+
+
+/* Responsive 
+ * ------------------------------------------------ */
 
 @media all and (max-width: 768px) {
   #main { padding: 30px 0; }
