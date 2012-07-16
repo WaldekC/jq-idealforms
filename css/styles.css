@@ -33,7 +33,7 @@ header {
 .content li {
   margin: .5em 0;
   padding-left: 1.5em;
-  background: url(../img/bullet.png) 0 3px no-repeat;
+  background: url(../img/bullet.png) 0 2px no-repeat;
 }
 .content a:link,
 .content a:visited {
