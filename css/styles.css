@@ -44,6 +44,7 @@ header {
   background: white;
   padding: .2em .5em;
   font-size: 85%;
+  border-radius: 3px;
 }
 footer {
   padding: 40px 0;
