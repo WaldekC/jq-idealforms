@@ -26,11 +26,14 @@ header {
   margin: .5em 0 1em 0;
 }
 .content ul {
-  margin: 0 0 1em 0;
-  padding: 0 1em;
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  list-style: none;
 }
 .content li {
   margin: .5em 0;
+  padding-left: 1.5em;
+  background: url(../img/bullet.png) 0 3px no-repeat;
 }
 .content a:link,
 .content a:visited {
