@@ -1309,6 +1309,10 @@ button.ideal-file-upload:active {
 .ui-datepicker .ui-datepicker-next:hover {
   border: none;
 }
+.ui-datepicker .ui-datepicker-prev:active,
+.ui-datepicker .ui-datepicker-next:active {
+  margin-top: -7px;
+}
 .ui-datepicker .ui-datepicker-prev {
   left: 0;
 }
