@@ -141,7 +141,7 @@
           <div><label>Phone:</label><input type="tel" name="phone" class="phone"/></div>
           <div><label>State:</label>
           <select id="states" name="states">
-            <option value="Select a State">Select a State</option>
+            <option value="default">&ndash; Select a State &ndash;</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -260,7 +260,7 @@
       'states': {
       	filters: 'exclude',
       	data: {
-      		exclude: ['Select a State']
+      		exclude: ['default']
       	},
       	errors : {
       		exclude: 'Select a State.'
