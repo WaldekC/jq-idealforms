@@ -836,7 +836,7 @@ textarea {
 .drop-arrow {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 8.823529411764706px;
   top: 50%;
   margin-top: -1.9607843137254903px;
   border-style: solid;
@@ -896,26 +896,32 @@ textarea {
   padding-right: 3em;
   position: relative;
 }
+.ideal-select-title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  width: 26.47058823529412px;
+  background: #e6e8e8;
+  border-left: 1px solid #b1b7b7;
+  border-radius: 0 3px 3px 0;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
+}
 .ideal-select-title:after {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 8.823529411764706px;
   top: 50%;
   margin-top: -1.9607843137254903px;
   border-style: solid;
   border-width: 5.882352941176471px;
-  border-color: #7c8686 transparent transparent transparent;
-}
-.ideal-select-title:before {
-  content: "";
-  position: absolute;
-  right: 31.764705882352942px;
-  height: 100%;
-  border-width: 0 1px 0 1px;
-  border-style: solid;
+  z-index: 2;
   border-color: transparent;
-  border-left-color: #969f9f;
-  border-right-color: #ffffff;
+  border-top-color: #7c8686;
 }
 .ideal-select-focus .ideal-select-title,
 .ideal-select-title:hover {
@@ -931,34 +937,32 @@ textarea {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#dae5ed', GradientType=0))";
   color: #314f64;
 }
-.ideal-select-focus .ideal-select-title:after,
-.ideal-select-title:hover:after {
-  content: "";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  margin-top: -1.9607843137254903px;
-  border-style: solid;
-  border-width: 5.882352941176471px;
-  border-color: #5284a9 transparent transparent transparent;
-}
 .ideal-select-focus .ideal-select-title:before,
 .ideal-select-title:hover:before {
-  border-left-color: #739dbb;
-  border-right-color: #ffffff;
+  background: #dae5ed;
+  border-left: 1px solid #95b5cc;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #ffffff;
 }
+.ideal-select-focus .ideal-select-title:after,
+.ideal-select-title:hover:after {
+  border-top-color: #5284a9;
+}
+/* Menu open */
 .ideal-select-open .ideal-select-title {
   border-radius: 3px 3px 0 0;
 }
 .ideal-select-open .ideal-select-title:after {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 8.823529411764706px;
   top: 50%;
   margin-top: -1.9607843137254903px;
   border-style: solid;
   border-width: 5.882352941176471px;
-  border-color: transparent transparent #5284a9 transparent;
+  border-color: transparent;
+  border-bottom-color: #5284a9;
   margin-top: -8.823529411764706px;
 }
 /* --------------------------------------------------------
@@ -1034,6 +1038,10 @@ textarea {
   line-height: 0;
   text-indent: -9999px;
   border: 0;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  background: none;
 }
 .ideal-select-list.ideal-select-open .ideal-select-title,
 .ideal-select-list .ideal-select-title {
@@ -1047,6 +1055,10 @@ textarea {
   line-height: 0;
   text-indent: -9999px;
   border: 0;
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+  background: none;
 }
 .ideal-select-list .ideal-select-sub {
   /* Fix IE8 adding 1px to scrollbar */
