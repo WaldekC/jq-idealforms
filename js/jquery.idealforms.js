@@ -236,9 +236,8 @@ $.fn.idealforms = function (ops) {
 
           $(this).datepicker({
             dateFormat: format,
-            beforeShow: function (input, inst) {
+            beforeShow: function (input) {
               $(input).addClass('open')
-              inst.dpDiv.addClass('ideal-ui')
             },
             onChangeMonthYear: function () {
               // Hack to fix IE9 not resizing
