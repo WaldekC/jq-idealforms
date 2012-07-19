@@ -906,6 +906,17 @@ textarea {
   border-width: 5.882352941176471px;
   border-color: #7c8686 transparent transparent transparent;
 }
+.ideal-select-title:before {
+  content: "";
+  position: absolute;
+  right: 31.764705882352942px;
+  height: 100%;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #969f9f;
+  border-right-color: #ffffff;
+}
 .ideal-select-focus .ideal-select-title,
 .ideal-select-title:hover {
   border: 1px solid #95b5cc;
@@ -930,6 +941,11 @@ textarea {
   border-style: solid;
   border-width: 5.882352941176471px;
   border-color: #5284a9 transparent transparent transparent;
+}
+.ideal-select-focus .ideal-select-title:before,
+.ideal-select-title:hover:before {
+  border-left-color: #739dbb;
+  border-right-color: #ffffff;
 }
 .ideal-select-open .ideal-select-title {
   border-radius: 3px 3px 0 0;
