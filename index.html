@@ -9,9 +9,9 @@
 <!--[if lt IE 9]>
 <script src="js/lib/html5shiv.js"></script>
 <![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet' type='text/css'>
 <link href="css/1140.css" rel="stylesheet"/>
 <link href="css/normalize.css" rel="stylesheet"/>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
 <link href="css/jquery.idealforms.css" rel="stylesheet" media="screen"/>
 <link href="css/styles.css" rel="stylesheet" media="screen"/>
 </head>
@@ -53,8 +53,8 @@
     	<li><strong>License: </strong>GPL or MIT</li>
     </ul>
     <a href="https://github.com/elclanrs/jq-idealforms">&raquo; Ideal Forms at Github</a>
-  </div>
 
+  </div>
 
   <div class="eightcol last">
     <form id="my-form">
@@ -228,6 +228,8 @@
 <script src="js/min/jquery.idealforms.min.js"></script>
 <script>
 
+  $(function(){
+
   var users = ['admin', 'user'];
 
   var options = {
@@ -289,37 +291,7 @@
 
   $idealform.focusFirst();
 
- // var newFields = [
- //   {
- //     name: 'animals',
- //     title: 'Animals',
- //     addAfter: 'email',
- //     type: 'radio',
- //     list: ['Dog', 'Elephant', 'Crocodile', 'Spider']
- //   },
- //   {
- //     name: 'zip',
- //     title: 'Zip Code',
- //     filters: 'required zip',
- //     type: 'text'
- //   },
- //   {
- //     name: 'instruments',
- //     title: 'Instruments',
- //     addAfter: 'langs[]',
- //     filters: 'exclude',
- //     data: { exclude: ['Select an instrument'] },
- //     type: 'select',
- //     list: [
- //       'Select an instrument',
- //       'Piano',
- //       'Violin',
- //       'Guitar'
- //     ]
- //   }
- // ];
-
- // $idealform.addFields(newFields);
+})
 
 </script>
 

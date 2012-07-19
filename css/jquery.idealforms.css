@@ -257,6 +257,7 @@ textarea {
 .responsiveWidth {
   width: 87.54863813229572% !important;
 }
+/*@import "jquery.ui.reset.less";*/
 /* --------------------------------------------------------
 
   Form:
@@ -1247,7 +1248,6 @@ button.ideal-file-upload:active {
   Date picker:
 
 -------------------------------------------------------- */
-.ui-datepicker,
 .ui-datepicker * {
   margin: 0;
   padding: 0;
@@ -1286,10 +1286,6 @@ button.ideal-file-upload:active {
   Calendar:
 -------------------------------------------------------- */
 
-  /* --------------------------------------------------------
-  Icons:
--------------------------------------------------------- */
-
 }
 .ui-datepicker .ui-datepicker-header {
   position: relative;
@@ -1298,64 +1294,65 @@ button.ideal-file-upload:active {
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
   position: absolute;
-  top: 0;
+  top: 50%;
+  margin-top: -8px;
   cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: url("../less/themes/basic/datepicker.png") left no-repeat;
 }
-.ui-datepicker .ui-datepicker-next {
-  right: 0;
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: none;
+}
+.ui-datepicker .ui-datepicker-prev:hover,
+.ui-datepicker .ui-datepicker-next:hover {
+  border: none;
 }
 .ui-datepicker .ui-datepicker-prev {
   left: 0;
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 0;
+  background-position: right;
 }
 .ui-datepicker .ui-datepicker-title {
   text-align: center;
   color: #222222;
 }
-.ui-datepicker table {
-  width: 100%;
+.ui-datepicker .ui-datepicker-calendar {
+  font-size: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
-.ui-datepicker th {
-  font-weight: bold;
+.ui-datepicker .ui-datepicker-calendar th {
+  padding: 0;
+  padding-bottom: .2em;
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-calendar a {
+  margin: 0;
+  padding: 0;
   border: 0;
-  padding-bottom: .1em;
-  color: #222222;
+  outline: 0;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+  background: none;
+  -moz-box-shadow: 0, transparent 0 0 0;
+  -webkit-box-shadow: 0, transparent 0 0 0;
+  box-shadow: 0, transparent 0 0 0;
+  padding: .1em 0;
+  text-align: center;
 }
-.ui-datepicker tr {
-  text-align: right;
-}
-.ui-datepicker tr a {
-  display: block;
-  margin: .1em;
-  padding: .1em .2em;
-  border-radius: 3px;
-}
-.ui-datepicker tr a.ui-state-default {
+.ui-datepicker .ui-datepicker-calendar .ui-state-default {
   color: #999999;
+  font-weight: normal;
 }
-.ui-datepicker tr a.ui-state-hover,
-.ui-datepicker tr a.ui-state-active {
+.ui-datepicker .ui-datepicker-calendar .ui-state-hover,
+.ui-datepicker .ui-datepicker-calendar .ui-state-active {
   color: #1a8fc9;
   font-weight: bold;
-}
-.ui-datepicker .ui-icon {
-  display: block;
-  text-indent: -99999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.ui-datepicker .ui-icon-circle-triangle-w,
-.ui-datepicker .ui-icon-circle-triangle-e {
-  background: url("../less/themes/basic/datepicker.png") no-repeat;
-  width: 16px;
-  height: 16px;
-}
-.ui-datepicker .ui-icon-circle-triangle-e {
-  background-position: right;
 }
 /* --------------------------------------------------------
   Input:
