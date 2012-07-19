@@ -1028,6 +1028,7 @@ textarea {
   width: auto;
 }
 .ideal-select-list.ideal-select-focus .title:after .ideal-select-title:after,
+.ideal-select-list .ideal-select-title:before,
 .ideal-select-list .ideal-select-title:hover {
   content: ".";
   line-height: 0;
@@ -1039,7 +1040,9 @@ textarea {
   border-radius: 3px 3px 0 0;
 }
 .ideal-select-list.ideal-select-open .ideal-select-title:after,
-.ideal-select-list .ideal-select-title:after {
+.ideal-select-list .ideal-select-title:after,
+.ideal-select-list.ideal-select-open .ideal-select-title:before,
+.ideal-select-list .ideal-select-title:before {
   content: ".";
   line-height: 0;
   text-indent: -9999px;
