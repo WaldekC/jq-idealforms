@@ -626,16 +626,17 @@ textarea {
   right: 0;
   margin-right: 0;
   top: 100%;
-  margin-top: .3em;
+  margin-top: .4em;
   border-radius: 3px;
 }
-.ideal-form.stack .ideal-error:after {
+.ideal-form.stack .ideal-error:after,
+.ideal-form.stack .ideal-error:before {
   content: ".";
   line-height: 0;
   text-indent: -9999px;
   position: absolute;
   top: 0;
-  margin-top: -18px;
+  margin-top: -20px;
   left: 50%;
   z-index: 1;
   margin-left: -10px;
@@ -643,6 +644,11 @@ textarea {
   border-width: 10px;
   border-color: transparent;
   border-bottom-color: #1f4f73;
+}
+.ideal-form.stack .ideal-error:before {
+  margin-top: -21px;
+  z-index: -1;
+  border-bottom-color: #193e5b;
 }
 .ideal-form.stack .ideal-error.hidden {
   position: absolute;
