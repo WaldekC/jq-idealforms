@@ -780,17 +780,26 @@ textarea {
   height: 100%;
   z-index: 2;
 }
-.ideal-tabs .ideal-tabs-tab-active {
+.ideal-tabs .ideal-tabs-tab:hover {
+  background: #d5e3ed;
+}
+.ideal-tabs .ideal-tabs-tab:hover:after {
+  border-left-color: #d5e3ed;
+}
+.ideal-tabs .ideal-tabs-tab-active,
+.ideal-tabs .ideal-tabs-tab-active:hover {
   color: #2191c9;
   background: #ffffff;
   font-weight: bold;
   padding-right: 3.5em;
   cursor: default;
 }
-.ideal-tabs .ideal-tabs-tab-active:hover {
+.ideal-tabs .ideal-tabs-tab-active:hover,
+.ideal-tabs .ideal-tabs-tab-active:hover:hover {
   text-decoration: none;
 }
-.ideal-tabs .ideal-tabs-tab-active:after {
+.ideal-tabs .ideal-tabs-tab-active:after,
+.ideal-tabs .ideal-tabs-tab-active:hover:after {
   border-left-color: #ffffff;
 }
 .ideal-tabs .ideal-tabs-tab-counter {
