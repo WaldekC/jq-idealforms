@@ -782,6 +782,7 @@ textarea {
 }
 .ideal-tabs .ideal-tabs-tab:hover {
   background: #d5e3ed;
+  color: #2b4d65;
 }
 .ideal-tabs .ideal-tabs-tab:hover:after {
   border-left-color: #d5e3ed;
