@@ -98,7 +98,7 @@ var getFilters = function () {
       regex: function (input, value) {
         //console.log(input.userOptions + ':' + value)
         var $input = input.input,
-            min = input.userOptions.data && input.userOptions.data.min,
+            min = input.userOptions.data.min,
             isRadioCheck = $input.is('[type="checkbox"], [type="radio"]')
         if (isRadioCheck) {
           this.error = $.idealforms.errors.minOption.replace('{0}', min)
@@ -112,7 +112,7 @@ var getFilters = function () {
     max: {
       regex: function (input, value) {
         var $input = input.input,
-            max = input.userOptions.data && input.userOptions.data.max,
+            max = input.userOptions.data.max,
             isRadioCheck = $input.is('[type="checkbox"], [type="radio"]')
         if (isRadioCheck) {
           this.error = $.idealforms.errors.maxOption.replace('{0}', max)
@@ -202,12 +202,14 @@ var getFilters = function () {
 
     exclude: {
       regex: function (input, value) {
-        var i = input.input
-        if (i.is('[type="checkbox"], [type="radio"], select'))
+        var $input = input.input,
+            exclude = input.userOptions.data.exclude,
+            isOption = $input.is('[type="checkbox"], [type="radio"], select')
+        if (isOption)
           this.error = $.idealforms.errors.excludeOption.replace('{0}', value)
         else
           this.error = $.idealforms.errors.exclude.replace('{0}', value)
-        return !~$.inArray(value, input.userOptions.data.exclude)
+        return !~$.inArray(value, exclude)
       }
     },
 
