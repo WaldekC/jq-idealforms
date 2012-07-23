@@ -39,7 +39,7 @@ $.fn.idealforms = function (ops) {
     return $t
   }()),
 
-  Filters = getFilters(), // Get filters with localized errors
+  Filters = $.idealforms.filters, // Get filters with localized errors
 
   /**
    * @namespace All form inputs of the given form
