@@ -96,8 +96,9 @@ var getFilters = function () {
 
     min: {
       regex: function (input, value) {
+        //console.log(input.userOptions + ':' + value)
         var $input = input.input,
-            min = input.userOptions.data.min,
+            min = input.userOptions.data && input.userOptions.data.min,
             isRadioCheck = $input.is('[type="checkbox"], [type="radio"]')
         if (isRadioCheck) {
           this.error = $.idealforms.errors.minOption.replace('{0}', min)
@@ -111,7 +112,7 @@ var getFilters = function () {
     max: {
       regex: function (input, value) {
         var $input = input.input,
-            max = input.userOptions.data.max,
+            max = input.userOptions.data && input.userOptions.data.max,
             isRadioCheck = $input.is('[type="checkbox"], [type="radio"]')
         if (isRadioCheck) {
           this.error = $.idealforms.errors.maxOption.replace('{0}', max)
