@@ -1136,9 +1136,11 @@ textarea {
   clear: both;
   margin: 0 1em;
   padding: .4em .8em;
-  padding-left: 40px;
   border: 1px solid transparent;
   border-radius: 3px;
+}
+.ideal-radiocheck .ideal-radiocheck-label {
+  padding-left: 40px;
 }
 .ideal-check,
 .ideal-radio {
