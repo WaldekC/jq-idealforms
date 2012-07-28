@@ -287,6 +287,8 @@ textarea {
     Inputs:
   -------------------------------------------------------- */
 
+  /* Hidden inputs */
+
   /* -------------------------------------------------------
     Buttons:
   -------------------------------------------------------- */
@@ -400,6 +402,9 @@ textarea {
 .ideal-form input[type="radio"],
 .ideal-form input[type="checkbox"] {
   margin-right: .5em;
+}
+.ideal-form .ideal-hidden {
+  display: none;
 }
 .ideal-form button,
 .ideal-form input[type="reset"],
