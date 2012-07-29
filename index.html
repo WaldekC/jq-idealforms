@@ -77,12 +77,18 @@
             <h2>Essential:</h2>
             <p>What? Custom file inputs? Oh yeah!</p>
           </div>
-          <div><label>Username:</label><input id="username" name="username" type="text"/></div>
-          <div><label>Password:</label><input id="password" name="password" type="password"/></div>
-          <div><label>E-Mail:</label><input id="email" name="email" class="required email" type="email"/></div>
-          <div><label>Date:</label><input name="date" class="datepicker" type="text" placeholder="mm/dd/yyyy"/></div>
-          <div><label>Image:</label><input name="file" multiple type="file"/></div>
-          <div><label>Website:</label><input name="website" class="url" type="text"/></div>
+          <!--<div><label>Username:</label><input id="username" name="username" type="text"/></div>-->
+          <!--<div><label>Password:</label><input id="password" name="password" type="password"/></div>-->
+          <!--<div><label>E-Mail:</label><input id="email" name="email" class="required email" type="email"/></div>-->
+          <!--<div><label>Date:</label><input name="date" class="datepicker" type="text" placeholder="mm/dd/yyyy"/></div>-->
+          <!--<div><label>Image:</label><input name="file" multiple type="file"/></div>-->
+          <!--<div><label>Website:</label><input name="website" class="url" type="text"/></div>-->
+
+          <div><label>Ich bin Schüler:</label>
+            <label><input type="radio" value="yes" name="foo"/>Yes</label>
+            <label><input type="radio" value="no" name="foo"/>No</label>
+          </div>
+
         </section>
 
         <section name="Step 2">
@@ -303,6 +309,49 @@
   });
 
   $idealform.focusFirst();
+
+
+  var newFields = [
+    {
+      name: 'Schule',
+      label : 'Meine Schule',
+      filters: 'required min',
+      data: { min: 5 },
+      errors: { 
+        required: "Bitte deine Schule auswählen",
+        min: "Bitte deine Schule auswählen" 
+      },
+      type: "text",
+      appendToTab: 'Step 1'
+    },
+    {
+      name: 'Jahrgang',
+      label: 'Jahrgang',
+      filters: 'exclude required',
+      data: { exclude: ['Bitte auswählen'] },
+      errors: { exclude: 'Bitte deinen Jahrgang auswählen' },
+      type: 'select',
+      list: [
+        'Bitte auswählen',
+        '7',
+        '8',
+        '9',
+        '10',
+        '11',
+        '12',
+        '13'
+      ],
+      appendToTab: 'Step 1'
+    }
+  ];
+
+  $('[name=foo]').change(function () {
+    var val = $(this).val();
+    if (val === 'yes')
+      $idealform.addFields(newFields)
+    else
+      $idealform.removeFields(['Schule', 'Jahrgang'])
+  })
 
 
 </script>
