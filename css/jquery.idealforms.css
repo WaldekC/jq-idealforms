@@ -1244,12 +1244,10 @@ textarea {
 -------------------------------------------------------- */
 .ideal-file-wrap {
   width: 225px;
-  overflow: hidden;
 }
 input.ideal-file-filename {
   padding-right: 75px !important;
   height: 33px;
-  font-size: 85% !important;
 }
 button.ideal-file-upload {
   -webkit-touch-callout: none;
@@ -1274,6 +1272,7 @@ button.ideal-file-upload {
   color: #4c4c4c;
   font-size: 85%;
   position: absolute;
+  top: 0;
   right: 0;
   margin: 0;
   height: 33px;
