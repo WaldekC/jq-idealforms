@@ -200,63 +200,16 @@ textarea {
 /*--------------------------------------------------------
   Helpers
 ------------------------------------------------------- */
-.box-sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.reset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  text-decoration: none;
-  font-size: 100%;
-  list-style: none;
-  background: none;
-  -moz-box-shadow: 0, transparent 0 0 0;
-  -webkit-box-shadow: 0, transparent 0 0 0;
-  box-shadow: 0, transparent 0 0 0;
-}
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
 /*-------------------------------------------------------
   CSS3
 ------------------------------------------------------- */
-.no-user-select {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 /* IE8 hack :after pseudo force refresh */
-.ie-refresh {
-  content: ".";
-  line-height: 0;
-  text-indent: -9999px;
-}
 /*--------------------------------------------------------
   UI Inputs (select & button)
 ------------------------------------------------------- */
-.ui-input {
-  font-family: sans-serif;
-  height: 33px;
-  line-height: 33px;
-  padding: 0 .8em;
-}
 /*--------------------------------------------------------
   Responsive width
 ------------------------------------------------------- */
-.responsiveWidth {
-  width: 87.54863813229572% !important;
-}
 /* --------------------------------------------------------
 
   Form:
