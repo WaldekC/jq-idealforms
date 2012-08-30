@@ -291,20 +291,7 @@ $.fn.idealforms = function (ops) {
                    .addClass('hidden')
       }
 
-      // Placeholder support
-      if (!('placeholder' in $('<input/>')[0])) {
-        formInputs.text.each(function () {
-          $(this).val($(this).attr('placeholder'))
-        }).on({
-          focus: function () {
-            if (this.value === $(this).attr('placeholder'))
-              $(this).val('')
-          },
-          blur: function () {
-            $(this).val() || $(this).val($(this).attr('placeholder'))
-          }
-        })
-      }
+
     },
 
     /**
