@@ -54,7 +54,7 @@ $.fn.idealforms = function (ops) {
     return {
       inputs: $form.find('input, select, textarea, :button'),
       labels: $form.find('div > label:first-child'),
-      text: $form.find('input:not([type="checkbox"], [type="radio"]), textarea'),
+      text: $form.find('input:not([type="checkbox"], [type="radio"], [type="submit"]), textarea'),
       select: $form.find('select'),
       radiocheck: $form.find('input[type="radio"], input[type="checkbox"]'),
       buttons: $form.find(':button'),
@@ -291,7 +291,20 @@ $.fn.idealforms = function (ops) {
                    .addClass('hidden')
       }
 
-
+      // Placeholder support
+      if (!('placeholder' in $('<input/>')[0])) {
+        formInputs.text.each(function () {
+          $(this).val($(this).attr('placeholder'))
+        }).on({
+          focus: function () {
+            if (this.value === $(this).attr('placeholder'))
+              $(this).val('')
+          },
+          blur: function () {
+            $(this).val() || $(this).val($(this).attr('placeholder'))
+          }
+        })
+      }
     },
 
     /**
