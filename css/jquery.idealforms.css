@@ -1088,19 +1088,31 @@ textarea {
 .ideal-radio {
   background-position: left bottom;
 }
+.ideal-check.focus {
+  background-position: -20px 0;
+}
+.ideal-radio.focus {
+  background-position: -20px bottom;
+}
 .ideal-check.checked {
-  background-position: right top;
+  background-position: -40px 0;
 }
-.ideal-radio.checked {
-  background-position: right bottom;
+.ideal-check.checked {
+  background-position: -40px 0;
 }
-.ideal-radiocheck label.focus {
-  background: #ffffff;
-  border: 1px solid transparent;
-  color: #333333;
-  font-weight: bold;
-  position: relative;
+.ideal-check.checked.focus {
+  background-position: -60px 0;
 }
+.ideal-radio.checked.focus {
+  background-position: -60px bottom;
+}
+/*.ideal-radiocheck label.focus {*/
+/*background: @radiocheck-focus-bg;*/
+/*border: @radiocheck-focus-border;*/
+/*color: @radiocheck-focus-text;*/
+/*font-weight: bold;*/
+/*position: relative;*/
+/*}*/
 .ideal-full-width .ideal-radiocheck {
   max-width: 100%;
   width: 100%;
