@@ -616,26 +616,6 @@ textarea {
   -------------------------------------------------------- */
 
 }
-.ideal-tabs .arrow {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  right: -30.5px;
-  border-width: 19px 19px 19px 12.666666666666666px;
-  border-style: solid;
-  border-color: transparent transparent transparent #e5e5e5;
-}
-.ideal-tabs .separator {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  right: -30.5px;
-  border-width: 19px 19px 19px 12.666666666666666px;
-  border-style: solid;
-  border-color: transparent transparent transparent #e5e5e5;
-  border-left-color: #b2b2b2;
-  right: -31.5px;
-}
 .ideal-tabs .ideal-tabs-wrap {
   margin-bottom: 2em;
   border-radius: 3px;
@@ -790,15 +770,6 @@ textarea {
 /* --------------------------------------------------------
     Mixins:
   -------------------------------------------------------- */
-.drop-arrow {
-  content: "";
-  position: absolute;
-  right: 8.823529411764706px;
-  top: 50%;
-  margin-top: -1.9607843137254903px;
-  border-style: solid;
-  border-width: 5.882352941176471px;
-}
 /* --------------------------------------------------------
     Global:
   -------------------------------------------------------- */
@@ -1362,9 +1333,8 @@ input.hasDatepicker.open {
 /*--------------------------------------------------------
   IE9
 ------------------------------------------------------- */
-.ie9 .ideal-form {
+.ie9 {
   /* IE9 doesn't like border-radius + gradient */
-
 }
 .ie9 .ideal-form * {
   border-radius: 0 !important;
