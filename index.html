@@ -79,10 +79,10 @@
           </div>
           <div><label>Username:</label><input id="username" name="username" type="text"/></div>
           <div><label>Password:</label><input id="pass" name="password" type="password"/></div>
-          <div><label>E-Mail:</label><input id="email" name="email" class="required email" type="email"/></div>
-          <div><label>Date:</label><input name="date" class="datepicker" type="text" placeholder="mm/dd/yyyy"/></div>
+          <div><label>E-Mail:</label><input id="email" name="email" data-ideal="required email" type="email"/></div>
+          <div><label>Date:</label><input name="date" class="datepicker" data-ideal="date" type="text" placeholder="mm/dd/yyyy"/></div>
           <div><label>Image:</label><input name="file" multiple type="file"/></div>
-          <div><label>Website:</label><input name="website" class="url" type="text"/></div>
+          <div><label>Website:</label><input name="website" data-ideal="url" type="text"/></div>
         </section>
 
         <section name="Step 2">
@@ -103,47 +103,6 @@
             <label><input type="radio" name="radio"/>Two</label>
             <label><input type="radio" name="radio"/>Three</label>
           </div>
-          <!--<div>-->
-            <!--<p><strong>Which of these movie quotes you like best?</strong></p>-->
-          <!--</div>-->
-          <!--<div class="ideal-full-width">-->
-            <!--<label></label>-->
-            <!--<label>-->
-              <!--<input type="radio" name="quotes" checked/>-->
-              <!--&ldquo;I'm going to make him an offer he can't refuse.&rdquo; &mdash; Don Vito Corleone, The Godfather-->
-            <!--</label>-->
-            <!--<label>-->
-              <!--<input type="radio" name="quotes"/>-->
-              <!--&ldquo;I love the smell of napalm in the morning.&rdquo; &mdash; Lt. Col. Bill Kilgore, Apocalypse Now-->
-            <!--</label>-->
-            <!--<label>-->
-              <!--<input type="radio" name="quotes"/>-->
-              <!--&ldquo;A guy who dresses as a bat clearly has issues.&rdquo; &mdash; Bruce Wayne, Batman Begins-->
-            <!--</label>-->
-          <!--</div>-->
-
-          <!--<div>-->
-            <!--<p><strong>How many of these facts, if any, are true?</strong></p>-->
-          <!--</div>-->
-          <!--<div class="ideal-full-width">-->
-            <!--<label></label>-->
-            <!--<label>-->
-              <!--<input type="checkbox" name="facts[]"/>-->
-              <!--The average person uses 150 gallons of water a day for personal use.-->
-            <!--</label>-->
-            <!--<label>-->
-              <!--<input type="checkbox" name="facts[]"/>-->
-              <!--100 people chocke to death on pens each year.-->
-            <!--</label>-->
-            <!--<label>-->
-              <!--<input type="checkbox" name="facts[]"/>-->
-              <!--The world will end in December 2012 according the the Mayans.-->
-            <!--</label>-->
-            <!--<label>-->
-              <!--<input type="checkbox" name="facts[]"/>-->
-              <!--Sherlock Homes never said &ldquo;Elementary my dear Watson&rdquo;-->
-            <!--</label>-->
-          <!--</div>-->
         </section>
 
         <section name="Step 3">
@@ -263,9 +222,7 @@
           extension: ['jpg']
         }
       },
-      'date': {
-        filters: 'date'
-      },
+
       'comments': {
         filters: 'min max',
         data: {
@@ -298,10 +255,7 @@
 
   var $idealform = $('#my-form').idealforms(options);
 
-  $('#reset').click(function(){
-    $idealform.reset().fresh().focusFirst()
-  });
-
+  $('#reset').click(function(){ $idealform.reset().fresh().focusFirst() });
   $idealform.focusFirst();
 
 </script>
