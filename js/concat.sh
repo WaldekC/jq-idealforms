@@ -10,5 +10,5 @@ filters.js \
 flags.js \
 jquery.idealforms.js \
 end.js \
-| uglifyjs -o min/jquery.idealforms.min.js
+| uglifyjs -b -i 2 -nm -nmf -o min/jquery.idealforms.min.js
 # -b -i 2 -nm -nmf 
