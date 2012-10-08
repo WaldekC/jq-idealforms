@@ -1241,6 +1241,7 @@ button.ideal-file-upload:active {
   background: #ffffff;
   border-radius: 0 0 3px 3px;
   font-size: 85%;
+  font-family: sans-serif;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0;
