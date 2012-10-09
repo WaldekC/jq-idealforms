@@ -412,6 +412,7 @@ textarea {
   right: -24px;
   height: 16px;
   width: 16px;
+  background: url("../less/themes/basic/validation.png");
 }
 .ideal-form textarea ~ .ideal-icon-valid,
 .ideal-form textarea ~ .ideal-icon-invalid,
@@ -425,11 +426,14 @@ textarea {
   margin-top: 0;
 }
 .ideal-form .ideal-icon-valid {
-  background: url("../less/themes/basic/valid.png") no-repeat;
+  background-position: -16px 0;
 }
 .ideal-form .ideal-icon-invalid {
-  background: url("../less/themes/basic/invalid.png") no-repeat;
+  background-position: 0 0;
   cursor: pointer;
+}
+.ideal-form .ajax .ideal-icon-invalid {
+  background: url(../less/themes/basic/loading.gif);
 }
 .ideal-form .invalid input[type="text"],
 .ideal-form .invalid input[type="password"],
@@ -456,6 +460,19 @@ textarea {
   background: #edf7fc;
   color: #1a719d;
   border: 1px solid #3ea9df;
+}
+.ideal-form .ajax input[type="text"],
+.ideal-form .ajax input[type="password"],
+.ideal-form .ajax input[type="email"],
+.ideal-form .ajax input[type="number"],
+.ideal-form .ajax input[type="search"],
+.ideal-form .ajax input[type="url"],
+.ideal-form .ajax input[type="tel"],
+.ideal-form .ajax textarea,
+.ideal-form .ajax select {
+  background: #faf9e8;
+  color: #918a1f;
+  border: 1px solid #d6cd40;
 }
 .ideal-form .valid textarea,
 .ideal-form .invalid textarea {

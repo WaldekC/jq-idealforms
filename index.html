@@ -81,7 +81,7 @@
           <div><label>Password:</label><input id="pass" name="password" type="password"/></div>
           <div><label>E-Mail:</label><input id="email" name="email" data-ideal="required email" type="email"/></div>
           <div><label>Date:</label><input name="date" class="datepicker" data-ideal="date" type="text" placeholder="mm/dd/yyyy"/></div>
-          <div><label>Image:</label><input name="file" multiple type="file"/></div>
+          <div><label>Image:</label><input id="file" name="file" multiple type="file"/></div>
           <div><label>Website:</label><input name="website" data-ideal="url" type="text"/></div>
         </section>
 
@@ -201,15 +201,14 @@
 <script src="js/min/jquery.idealforms.min.js"></script>
 <script>
 
-
   var users = ['admin', 'user'];
 
   var options = {
 
     inputs: {
-     'password': {
-       filters: 'required pass'
-     },
+      'password': {
+        filters: 'required pass'
+      },
       'username': {
         filters: 'required username exclude',
         data: {
@@ -231,13 +230,13 @@
         }
       },
       'states': {
-      	filters: 'exclude',
-      	data: {
-      		exclude: ['default']
-      	},
-      	errors : {
-      		exclude: 'Select a State.'
-      	}
+        filters: 'exclude',
+        data: {
+          exclude: ['default']
+        },
+        errors : {
+          exclude: 'Select a State.'
+        }
       },
       'langs[]': {
         filters: 'min max',
