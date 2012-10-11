@@ -238,9 +238,7 @@ $.fn.idealforms = function(ops) {
           var format = data ? data.replace('yyyy', 'yy') : 'mm/dd/yy'
 
           $(this).datepicker({
-
             dateFormat: format,
-
             beforeShow: function (input) {
               $(input).addClass('open')
             },
@@ -251,14 +249,12 @@ $.fn.idealforms = function(ops) {
                 $(this).datepicker('widget').css('width', w)
               }, 1)
             },
-            onClose: function () {
-              $(this).removeClass('open')
-            }
+            onClose: function () { $(this).removeClass('open') }
           })
         })
 
         // Adjust width
-        $datepicker.on('focus keyup', function(){
+        $datepicker.on('focus keyup', function() {
           var t = $(this), w = t.outerWidth()
           t.datepicker('widget').css('width', w)
         })
