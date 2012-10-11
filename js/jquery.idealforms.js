@@ -418,13 +418,9 @@ $.fn.idealforms = function(ops) {
         ? $form.toggleClass('stack', $form.width() < maxWidth)
         : $form.toggleClass('stack', $(window).width() < o.responsiveAt)
 
-      if ($form.is('.stack')) {
-        $emptyLabel.hide()
-        $customSelect.trigger('list')
-      } else {
-        $emptyLabel.show()
-        $customSelect.trigger('menu')
-      }
+      var isStack = $form.is('.stack')
+      $emptyLabel.toggle(!isStack)
+      $customSelect.trigger(isStack ? 'list' : 'menu')
 
       // Hide datePicker
       var $datePicker = $form.find('input.hasDatepicker')
