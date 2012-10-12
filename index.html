@@ -71,6 +71,7 @@
   </div>
 
   <div class="eightcol last">
+
     <form id="my-form">
 
         <section name="Step 1">
@@ -179,6 +180,7 @@
       </div>
 
     </form>
+
   </div>
 
 </div>
@@ -205,13 +207,17 @@
 
   var options = {
 
+    onFail: function() {
+      alert( $idealform.getInvalid().length +' invalid fields.' )
+    },
+
     inputs: {
       'password': {
         filters: 'required pass',
       },
       'username': {
-        filters: 'required username',
-        // data: { ajax: { url:'validate.php' } },
+        filters: 'required username ajax',
+        data: { ajax: { url:'validate.php' } },
       },
       'file': {
         filters: 'extension',
@@ -250,7 +256,7 @@
     }
   };
 
-  var $idealform = $('#my-form').idealforms(options);
+  var $idealform = $('#my-form').idealforms(options).data('idealforms');
 
   $('#reset').click(function(){ $idealform.reset().fresh().focusFirst() });
   $idealform.focusFirst();
