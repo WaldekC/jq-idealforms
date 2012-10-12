@@ -12,4 +12,4 @@ private_methods.js \
 public_methods.js \
 end.js \
 | uglifyjs -o min/jquery.idealforms.min.js
-# -b -i 2 -nm -nmf 
+# 

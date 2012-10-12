@@ -216,38 +216,28 @@
         filters: 'required pass',
       },
       'username': {
-        filters: 'required username',
-        // data: { ajax: { url:'validate.php' } },
+        filters: 'required username ajax',
+        data: { ajax: { url:'validate.php' } },
       },
       'file': {
         filters: 'extension',
-        data: {
-          extension: ['jpg']
-        }
+        data: { extension: ['jpg'] }
       },
 
       'comments': {
         filters: 'min max',
-        data: {
-          min: 50,
-          max: 200
-        }
+        data: { min: 50, max: 200 }
       },
       'states': {
         filters: 'exclude',
-        data: {
-          exclude: ['default']
-        },
+        data: { exclude: ['default'] },
         errors : {
           exclude: 'Select a State.'
         }
       },
       'langs[]': {
         filters: 'min max',
-        data: {
-          min: 2,
-          max: 3
-        },
+        data: { min: 2, max: 3 },
         errors: {
           min: 'Check at least <strong>2</strong> options.',
           max: 'No more than <strong>3</strong> options allowed.'
