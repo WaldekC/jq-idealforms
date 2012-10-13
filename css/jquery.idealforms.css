@@ -859,7 +859,7 @@ textarea {
 .ideal-select-title:after {
   content: "";
   position: absolute;
-  right: 8.823529411764706px;
+  right: 8.823529411764707px;
   top: 50%;
   margin-top: -1.9607843137254903px;
   border-style: solid;
@@ -901,14 +901,14 @@ textarea {
 .ideal-select-open .ideal-select-title:after {
   content: "";
   position: absolute;
-  right: 8.823529411764706px;
+  right: 8.823529411764707px;
   top: 50%;
   margin-top: -1.9607843137254903px;
   border-style: solid;
   border-width: 5.882352941176471px;
   border-color: transparent;
   border-bottom-color: #4a83ac;
-  margin-top: -8.823529411764706px;
+  margin-top: -8.823529411764707px;
 }
 /* --------------------------------------------------------
     Options:

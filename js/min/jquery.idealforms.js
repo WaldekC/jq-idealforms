@@ -1816,5 +1816,4 @@ $.extend( IdealForms.prototype, {
 
 })
 
-
 }( jQuery, window, document ))
