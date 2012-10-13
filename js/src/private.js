@@ -435,4 +435,3 @@ $.extend( IdealForms.prototype, {
   }
 
 })
-

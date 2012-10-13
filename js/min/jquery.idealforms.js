@@ -1560,7 +1560,6 @@ $.extend( IdealForms.prototype, {
 
 })
 
-
 /*
  * Public Methods
  */
