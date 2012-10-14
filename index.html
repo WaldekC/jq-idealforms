@@ -218,17 +218,8 @@
       },
       'username': {
         filters: 'required username ajax',
-        data: { 
-          ajax: { 
-            url:'validate.php',
-            _success: function() {
-              console.log('success')
-            },
-            _error: function() {
-              console.log('error')
-            }
-          } 
-        },
+        data: {
+          ajax: { url:'validate.php' }
       },
       'file': {
         filters: 'extension',
