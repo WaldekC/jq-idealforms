@@ -209,7 +209,7 @@
   var options = {
 
     onFail: function() {
-      alert( $idealform.getInvalid().length +' invalid fields.' )
+      alert( $myform.getInvalid().length +' invalid fields.' )
     },
 
     inputs: {
@@ -218,9 +218,9 @@
       },
       'username': {
         filters: 'required username',
-        data: {
-          // ajax: { url:'validate.php' }
-        }
+        //data: {
+          //ajax: { url:'validate.php' }
+        //}
       },
       'file': {
         filters: 'extension',
