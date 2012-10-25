@@ -1676,7 +1676,6 @@ $.extend( IdealForms.prototype, {
   reload: function() {
     this._adjust()
     this._attachEvents()
-    this._getUserInputs().change()
     return this
   },
 
