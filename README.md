@@ -715,7 +715,7 @@ Example:
 With the markup provided above you'd call the plugin like this:
 
 ```javascript
-var $myform = $('#myform').idealforms({
+var $myform = $('#my-form').idealforms({
   inputs: {
     'username': {
       filters: 'required username exclude',
