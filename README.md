@@ -17,8 +17,8 @@
 * Localization
 
 ### Updates:
-**11/01/12**
-* Refactor custom file because of bug that prevented IE from submitting the file. 
+**11/21/12**
+* Prevent modifier keys ( ctrl, meta, super... ) in select menu to avoid regexp error. 
 
 [Update history](#update-history)
 
@@ -794,6 +794,9 @@ Radius for round corners.
 
 Update History:
 --------------
+**11/01/12**
+* Refactor custom file because of bug that prevented IE from submitting the file. 
+
 **10/24/12**
 * Fix serious bug in `_adjust` that caused weird behaviors with some methods.
 
