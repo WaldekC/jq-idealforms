@@ -132,7 +132,7 @@ For Ideal Forms to work its magic create your markup using the following templat
       </select>
     </div>
 
-  <section> <!-- END TAB -->
+  </section> <!-- END TAB -->
 
   <!-- TAB -->
   <section name="Second tab">
@@ -158,7 +158,7 @@ For Ideal Forms to work its magic create your markup using the following templat
       <label><input type="radio" name="options" value="Three"/>Three</label>
     </div>
 
-  <section> <!-- END TAB -->
+  </section> <!-- END TAB -->
 
   <!-- Separator -->
   <div><hr/></div>
