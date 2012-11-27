@@ -552,7 +552,7 @@ Insert the new field after an existing field.
 * **appendToTab**:
 Insert the new field at the end of a section. Takes a string.
 * **list**:
-Array of items for `select`, `radio` and `checkbox`. Use this format `item:value` to specify the value attribute.
+Array of items for `select`, `radio` and `checkbox`. Use this format `item::value` to specify the value attribute.
 * **placeholder**:
 The placeholder for text inputs. Use `exclude` for select menus.
 * **filters, data, errors, flags**: Check docs on [inputs](#inputs).
@@ -581,10 +581,10 @@ var newFields = [
     errors: { exclude: 'Please select an instrument' },
     type: 'select',
     list: [
-      'Select an instrument:default',
-      'Piano:pia',
-      'Violin:vio',
-      'Guitar:gui'
+      'Select an instrument::default',
+      'Piano::pia',
+      'Violin::vio',
+      'Guitar::gui'
     ],
     appendToTab: 'My Section'
   }
