@@ -132,8 +132,8 @@ var Utils = {
 
     function splitValue( str ) {
       var item, value, arr
-      if ( /:/.test( str ) ) {
-        arr = str.split(':')
+      if ( /::/.test( str ) ) {
+        arr = str.split('::')
         item = arr[ 0 ]
         value = arr[ 1 ]
       } else {
