@@ -25,6 +25,7 @@ module.exports = function( grunt ) {
           'js/src/radiocheck.js',
           'js/src/file.js',
           'js/src/filters.js',
+          'js/src/flags.js',
           'js/src/idealforms.js',
           'js/src/private.js',
           'js/src/public.js',

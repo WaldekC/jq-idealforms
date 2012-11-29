@@ -384,7 +384,7 @@ $.extend( IdealForms.prototype, {
     var flags = (function(){
       var f = userOptions.flags && userOptions.flags.split(' ') || []
       if ( o.globalFlags ) {
-        $.each( o.globalFlags.split(), function( i,v ) { f.push(v) })
+        $.each( o.globalFlags.split(' '), function( i,v ) { f.push(v) })
       }
       return f
     }())

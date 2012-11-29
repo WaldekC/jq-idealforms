@@ -1106,6 +1106,30 @@ var getFilters = function() {
 
 }
 
+$.idealforms.flags = {
+  noerror: function (i) {
+    i.parent().siblings('.ideal-error').hide()
+  },
+  noicons: function (i) {
+    i.siblings('.ideal-icon-valid, .ideal-icon-invalid').hide()
+  },
+  novalidicon: function (i) {
+    i.siblings('.ideal-icon-valid').hide()
+  },
+  noinvalidicon: function (i) {
+    i.siblings('.ideal-icon-invalid').hide()
+  },
+  noclass: function (i) {
+    i.parents('.ideal-field').removeClass('valid invalid')
+  },
+  novalidclass: function (i) {
+    i.parents('.ideal-field').removeClass('valid')
+  },
+  noinvalidclass: function (i) {
+    i.parents('.ideal-field').removeClass('invalid')
+  }
+}
+
 /*
  * Ideal Forms plugin
  */
@@ -1537,7 +1561,7 @@ $.extend( IdealForms.prototype, {
     var flags = (function(){
       var f = userOptions.flags && userOptions.flags.split(' ') || []
       if ( o.globalFlags ) {
-        $.each( o.globalFlags.split(), function( i,v ) { f.push(v) })
+        $.each( o.globalFlags.split(' '), function( i,v ) { f.push(v) })
       }
       return f
     }())
