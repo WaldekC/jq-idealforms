@@ -17,8 +17,8 @@
 * Localization
 
 ### Updates:
-**11/21/12**
-* Prevent modifier keys ( ctrl, meta, super... ) in select menu to avoid regexp error. 
+**11/29/12**
+* Add flags to grunt build and fix globalFlags not loading. 
 
 [Update history](#update-history)
 
@@ -794,6 +794,9 @@ Radius for round corners.
 
 Update History:
 --------------
+**11/21/12**
+* Prevent modifier keys ( ctrl, meta, super... ) in select menu to avoid regexp error. 
+
 **11/01/12**
 * Refactor custom file because of bug that prevented IE from submitting the file. 
 
