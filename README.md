@@ -468,8 +468,6 @@ Override the options of the form after being initialized.
 
 **chainable:** yes
 
-All options are exposed on `$myform.opts` so you can manually edit them if needed. Make sure to [reload](#reload) the form when doing this.
-
 ```javascript
 var myOps = {
   onFail: function() { // override onFail option
@@ -482,13 +480,15 @@ var myOps = {
 $myform.setOptions( myOps )
 ```
 
+All options are exposed on `$myform.opts` so you can manually edit them if needed. Make sure to [reload](#reload) the form when doing this.  
+
 **Note:** The `disableCustom` option cannot be modified after initialization.
 
 ### setFieldOptions
 
-**chainable:** yes
-
 Override the options of a particular field.
+
+**chainable:** yes
 
 ```javascript
 $myform.setFieldOptions( 'username', { filters: 'username' } )
