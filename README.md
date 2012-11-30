@@ -29,6 +29,7 @@
 ###  FAQ:
 * [Integrating Google reCAPTCHA](https://github.com/elclanrs/jq-idealforms/issues/30)
 * [Playing nice with Twitter Bootstrap](https://github.com/elclanrs/jq-idealforms/issues/32#issuecomment-7747413)
+* [Submit form with AJAX](https://github.com/elclanrs/jq-idealforms/issues/42)
 
 ###  Help:
 * Help localizing Ideal Forms in other languages.
