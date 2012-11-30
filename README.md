@@ -468,6 +468,8 @@ Override the options of the form after being initialized.
 
 **chainable:** yes
 
+All options are exposed on `$myform.opts` so you can manually edit them if needed. Make sure to [reload](#reload) the form when doing this.
+
 ```javascript
 var myOps = {
   onFail: function() { // override onFail option
@@ -713,10 +715,10 @@ $myform.reload().fresh() // Usually combined with `fresh()`
 
 Example:
 -------
-With the markup provided above you'd call the plugin like this:
+With the [Markup](#markup) provided you'd call the plugin like this:
 
 ```javascript
-var $myform = $('#my-form').idealforms({
+var options = {
   inputs: {
     'username': {
       filters: 'required username exclude',
@@ -743,7 +745,9 @@ var $myform = $('#my-form').idealforms({
       errors: { min: 'Check only <strong>1</strong> option.' }
     }
   }
-});
+};
+
+var $myform = $('#my-form').idealforms( options ).data('idealforms');
 ```
 
 Theming:
