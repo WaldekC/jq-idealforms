@@ -228,6 +228,14 @@ $.fn.idealTabs = function (container) {
         return re.test($(this).text())
       })
       return $tab.index()
+    },
+    /**
+     * Google analitycs track tabs
+     */
+    trackTab: function(){
+    	if (typeof _gaq !== "undefined" && _gaq !== null) {
+    		_gaq.push(['_trackPageview', '/tab_' + this.getCurIdx()]);
+    	}
     }
   },
 
@@ -244,9 +252,10 @@ $.fn.idealTabs = function (container) {
         ? Actions.getTabIdxByName(nameOrIdx)
         : nameOrIdx
 
-      $tabs.removeClass('ideal-tabs-tab-active')
-      $tabs.eq(idx).addClass('ideal-tabs-tab-active')
-      $contents.hide().eq(idx).show()
+      $tabs.removeClass('ideal-tabs-tab-active');
+      $tabs.eq(idx).addClass('ideal-tabs-tab-active');
+      $contents.hide().eq(idx).show();
+      Actions.trackTab();
     },
 
     nextTab: function () {
